@@ -2,174 +2,680 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Project Praveen | Digital Mitra</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PROJECT PRAVEEN | DIGITAL MITRA</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#f4f8ff;color:#12263f}
-nav{position:sticky;top:0;z-index:10;background:white;padding:15px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 15px #0001}
-.logo{font-weight:900;color:#0969da}
-nav a{color:#12263f;text-decoration:none;margin-left:15px;font-weight:bold;font-size:14px}
-
-.hero{min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:linear-gradient(135deg,#e5f2ff,#fff)}
-.hero h1{font-size:clamp(40px,9vw,75px);line-height:1.05;animation:show 1s}
-.hero h1 span{color:#0969da}
-.hero p{margin:15px;color:#52677d;font-size:19px}
-.btn{display:inline-block;background:#0969da;color:white;text-decoration:none;padding:13px 22px;border-radius:10px;margin:5px;font-weight:bold;transition:.3s}
-.btn:hover{transform:translateY(-4px)}
-
-.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#0969da;color:white;text-align:center;padding:28px 6%;gap:15px}
-.stats b{display:block;font-size:28px}
-
-section{padding:65px 7%}
-.title{text-align:center;margin-bottom:35px}
-.title h2{font-size:36px;margin-bottom:8px}
-.title p{color:#65798d}
-
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:auto}
-.card{background:white;padding:25px;border-radius:18px;border:1px solid #dfebf7;box-shadow:0 8px 25px #0000000c;transition:.3s}
-.card:hover{transform:translateY(-8px);box-shadow:0 15px 30px #0002}
-.icon{font-size:35px}
-.card h3{margin:12px 0 7px}
-.card p{color:#64788a}
-
-.lab{background:#eaf4ff}
-.find{background:#0d2942;color:white;text-align:center}
-.find .title p{color:#bdd4e8}
-.find input{padding:14px;margin:5px;border:0;border-radius:8px;width:220px}
-
-.notice{max-width:850px;margin:14px auto;padding:20px;background:white;border-left:5px solid #0969da;border-radius:8px;box-shadow:0 5px 18px #0001}
-
-footer{background:#071c2d;color:white;text-align:center;padding:35px 20px}
-footer p{margin-top:8px;color:#bdd0df}
-
-@keyframes show{
-from{opacity:0;transform:translateY(35px)}
-to{opacity:1;transform:translateY(0)}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-@media(max-width:700px){
-nav{flex-direction:column;gap:10px}
-nav a{font-size:12px;margin:5px}
-.stats{grid-template-columns:repeat(2,1fr)}
-.cards{grid-template-columns:1fr}
-.find input{width:90%}
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f8fc;
+    color:#172033;
+    line-height:1.6;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#071b35;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 15px #0003;
+}
+
+.logo{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:18px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+    background:linear-gradient(135deg,#071b35,#0b4f71,#0891b2);
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp 1s ease;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid #ffffff66;
+    border-radius:30px;
+    background:#ffffff18;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,9vw,78px);
+    line-height:1.05;
+}
+
+.hero h1 span{
+    color:#67e8f9;
+}
+
+.hero h2{
+    font-size:clamp(22px,5vw,38px);
+    margin:15px 0;
+}
+
+.hero p{
+    font-size:18px;
+    color:#e0f2fe;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:13px 25px;
+    background:white;
+    color:#075985;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+section{
+    padding:70px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:32px;
+    color:#073763;
+}
+
+.section-title p{
+    color:#64748b;
+}
+
+.stats{
+    margin-top:-45px;
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    padding:0 7%;
+}
+
+.stat{
+    background:white;
+    padding:25px 10px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 8px 25px #00000012;
+}
+
+.stat h2{
+    color:#0891b2;
+    font-size:32px;
+}
+
+.stat p{
+    color:#64748b;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    box-shadow:0 8px 25px #00000010;
+    border:1px solid #e2e8f0;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 30px #00000018;
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    color:#075985;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#64748b;
+}
+
+.dark{
+    background:#071b35;
+    color:white;
+}
+
+.dark .section-title h2{
+    color:#67e8f9;
+}
+
+.dark .section-title p{
+    color:#cbd5e1;
+}
+
+.lab-box{
+    max-width:900px;
+    margin:auto;
+    background:#0b2b4d;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 15px 40px #0005;
+}
+
+.lab-number{
+    font-size:55px;
+    font-weight:bold;
+    color:#67e8f9;
+}
+
+.trainer{
+    text-align:center;
+}
+
+.avatar{
+    width:80px;
+    height:80px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#e0f2fe;
+    color:#075985;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.notice{
+    max-width:900px;
+    margin:auto;
+}
+
+.notice-item{
+    background:white;
+    padding:18px 22px;
+    margin-bottom:12px;
+    border-left:5px solid #0891b2;
+    border-radius:8px;
+    box-shadow:0 5px 15px #0000000d;
+}
+
+.portal{
+    max-width:650px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 30px #00000012;
+}
+
+.portal input{
+    width:100%;
+    padding:13px;
+    margin:8px 0;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.portal button{
+    width:100%;
+    padding:13px;
+    margin-top:10px;
+    border:0;
+    border-radius:8px;
+    background:#075985;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.result{
+    display:none;
+    margin-top:20px;
+    padding:20px;
+    background:#ecfeff;
+    border-radius:12px;
+}
+
+footer{
+    background:#020617;
+    color:#cbd5e1;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer strong{
+    color:#67e8f9;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:800px){
+    nav{
+        padding:14px 5%;
+    }
+
+    nav div:last-child{
+        display:none;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:55px 5%;
+    }
+}
+
+@media(max-width:450px){
+    .hero{
+        min-height:80vh;
+    }
+
+    .stats{
+        padding:0 5%;
+    }
+
+    .stat h2{
+        font-size:25px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
 <nav>
-<div class="logo">PROJECT PRAVEEN</div>
-<div>
-<a href="#home">Home</a>
-<a href="#course">Course</a>
-<a href="#lab">Lab</a>
-<a href="#students">Students</a>
-<a href="#notices">Notices</a>
-</div>
+    <div class="logo">PROJECT <span>PRAVEEN</span></div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#course">Course</a>
+        <a href="#lab">Lab</a>
+        <a href="#trainers">Trainers</a>
+        <a href="#portal">Portal</a>
+    </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="home">
-<div>
-<p>💻 DIGITAL LEARNING • SKILL DEVELOPMENT</p>
-<h1>PROJECT PRAVEEN<br><span>DIGITAL MITRA</span></h1>
-<p>Learn • Practice • Create</p>
-<a class="btn" href="#course">Explore Course</a>
-<a class="btn" href="#students">Student Portal</a>
-</div>
+    <div class="hero-content">
+
+        <div class="badge">DIGITAL SKILL DEVELOPMENT PROGRAM</div>
+
+        <h1>PROJECT <span>PRAVEEN</span></h1>
+
+        <h2>DIGITAL MITRA</h2>
+
+        <p>
+            Learn • Practice • Create
+        </p>
+
+        <p>
+            Empowering students with digital knowledge,
+            computer skills and confidence for the future.
+        </p>
+
+        <a href="#course" class="btn">Explore Digital Mitra</a>
+
+    </div>
 </section>
 
+<!-- STATS -->
 <div class="stats">
-<div><b>201</b>Students</div>
-<div><b>35</b>Computers</div>
-<div><b>3</b>Trainers</div>
-<div><b>01</b>Digital Mission</div>
+
+    <div class="stat">
+        <h2>201</h2>
+        <p>Students</p>
+    </div>
+
+    <div class="stat">
+        <h2>35</h2>
+        <p>Computers</p>
+    </div>
+
+    <div class="stat">
+        <h2>03</h2>
+        <p>Trainers</p>
+    </div>
+
+    <div class="stat">
+        <h2>01</h2>
+        <p>Digital Mission</p>
+    </div>
+
 </div>
 
+<!-- COURSE -->
 <section id="course">
-<div class="title">
-<h2>📚 Digital Mitra Course</h2>
-<p>Practical digital skills for students</p>
-</div>
 
-<div class="cards">
-<div class="card"><div class="icon">💻</div><h3>Computer Basics</h3><p>Learn essential computer concepts and operation.</p></div>
-<div class="card"><div class="icon">🌐</div><h3>Internet & Networking</h3><p>Understand internet and basic networking.</p></div>
-<div class="card"><div class="icon">📱</div><h3>Digital Skills</h3><p>Develop useful digital communication skills.</p></div>
-<div class="card"><div class="icon">🛡️</div><h3>Cyber Safety</h3><p>Learn safe and responsible online behaviour.</p></div>
-<div class="card"><div class="icon">🗣️</div><h3>Soft Skills</h3><p>Build communication, confidence and teamwork.</p></div>
-<div class="card"><div class="icon">⚙️</div><h3>Practical Learning</h3><p>Practice skills through hands-on activities.</p></div>
-</div>
+    <div class="section-title">
+        <h2>Digital Mitra Course</h2>
+        <p>Building practical digital skills for students</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Computer Basics</h3>
+            <p>
+                Computer operation, hardware basics,
+                software and file management.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Internet & Networking</h3>
+            <p>
+                Internet fundamentals, browsers,
+                networking concepts and online services.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Digital Skills</h3>
+            <p>
+                Smartphone, digital tools and
+                responsible use of technology.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⌨️</div>
+            <h3>Typing & Productivity</h3>
+            <p>
+                Typing practice, documents,
+                presentations and productivity tools.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔐</div>
+            <h3>Digital Safety</h3>
+            <p>
+                Strong passwords, privacy,
+                cyber awareness and safe browsing.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎯</div>
+            <h3>Soft Skills</h3>
+            <p>
+                Communication, confidence,
+                teamwork and personality development.
+            </p>
+        </div>
+
+    </div>
+
 </section>
 
-<section class="lab" id="lab">
-<div class="title">
-<h2>💻 Computer Lab</h2>
-<p>Digital Mitra practical learning environment</p>
-</div>
+<!-- LAB -->
+<section id="lab" class="dark">
 
-<div class="cards">
-<div class="card"><h3>35 Computers</h3><p>Computer lab for practical digital training.</p></div>
-<div class="card"><h3>Training Sessions</h3><p>Learn, practice and complete digital activities.</p></div>
-<div class="card"><h3>Lab CR</h3><p>Banti Gupta</p></div>
-</div>
+    <div class="section-title">
+        <h2>Computer Laboratory</h2>
+        <p>Practice. Explore. Create.</p>
+    </div>
+
+    <div class="lab-box">
+
+        <div class="lab-number">35</div>
+
+        <h2>Computers Available</h2>
+
+        <p>
+            The Digital Mitra Computer Lab provides
+            students with a practical environment
+            to learn and practice digital skills.
+        </p>
+
+    </div>
+
 </section>
 
+<!-- TRAINERS -->
+<section id="trainers">
+
+    <div class="section-title">
+        <h2>Our Trainers</h2>
+        <p>Guiding students towards digital excellence</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card trainer">
+            <div class="avatar">A</div>
+            <h3>Archit Vashpnay</h3>
+            <p>Digital Mitra Trainer</p>
+        </div>
+
+        <div class="card trainer">
+            <div class="avatar">S</div>
+            <h3>Shivansh Tripathi</h3>
+            <p>Digital Mitra Trainer</p>
+        </div>
+
+        <div class="card trainer">
+            <div class="avatar">J</div>
+            <h3>Jiya</h3>
+            <p>Digital Mitra Trainer</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- NOTICE -->
 <section>
-<div class="title">
-<h2>👨‍🏫 Our Trainers</h2>
-<p>Digital Mitra Training Team</p>
-</div>
 
-<div class="cards">
-<div class="card"><div class="icon">👨‍🏫</div><h3>Trainer 1</h3><p>Digital Mitra Trainer</p></div>
-<div class="card"><div class="icon">👨‍🏫</div><h3>Trainer 2</h3><p>Digital Mitra Trainer</p></div>
-<div class="card"><div class="icon">👩‍🏫</div><h3>Trainer 3</h3><p>Digital Mitra Trainer</p></div>
-</div>
+    <div class="section-title">
+        <h2>Notice Board</h2>
+        <p>Latest Digital Mitra updates</p>
+    </div>
+
+    <div class="notice">
+
+        <div class="notice-item">
+            📢 <strong>Digital Mitra:</strong>
+            Regular computer practice is encouraged.
+        </div>
+
+        <div class="notice-item">
+            📚 <strong>Learning:</strong>
+            Practice your digital skills regularly.
+        </div>
+
+        <div class="notice-item">
+            ⭐ <strong>Mission:</strong>
+            Learn • Practice • Create
+        </div>
+
+    </div>
+
 </section>
 
-<section class="find" id="students">
-<div class="title">
-<h2>🎓 Student Portal</h2>
-<p>Find My Digital Mitra ID</p>
-</div>
+<!-- STUDENT PORTAL -->
+<section id="portal" class="dark">
 
-<input placeholder="Student Name">
-<input placeholder="Father's Name">
-<input placeholder="Date of Birth">
+    <div class="section-title">
+        <h2>Student Portal</h2>
+        <p>Demo ID verification system</p>
+    </div>
 
-<br>
+    <div class="portal">
 
-<button class="btn" onclick="alert('Demo only: connect an approved student database before using real student records.')">
-Find My ID
-</button>
+        <input id="studentName"
+               type="text"
+               placeholder="Enter Student Name">
+
+        <input id="fatherName"
+               type="text"
+               placeholder="Enter Father's Name">
+
+        <button onclick="findStudent()">
+            Find My ID
+        </button>
+
+        <div id="result" class="result"></div>
+
+    </div>
+
 </section>
 
-<section id="notices">
-<div class="title">
-<h2>📢 Notice Board</h2>
-<p>Project Praveen updates</p>
-</div>
-
-<div class="notice">
-<h3>Welcome to Digital Mitra</h3>
-<p>Training updates and important announcements will appear here.</p>
-</div>
-
-<div class="notice">
-<h3>Computer Lab Activities</h3>
-<p>Practical learning activities and events can be added here.</p>
-</div>
-</section>
-
+<!-- FOOTER -->
 <footer>
-<h3>PROJECT PRAVEEN • DIGITAL MITRA</h3>
-<p>Rajkiye Inter College, Sector 12, Noida</p>
-<p>Learn • Practice • Create</p>
+
+    <h2>PROJECT <strong>PRAVEEN</strong></h2>
+
+    <p>DIGITAL MITRA</p>
+
+    <p>Learn • Practice • Create</p>
+
+    <br>
+
+    <p>
+        Computer Lab • Rajkiye Inter College
+    </p>
+
+    <p>
+        Lab CR: <strong>Banti Gupta</strong>
+    </p>
+
+    <br>
+
+    <small>
+        © 2026 Project Praveen | Digital Mitra
+    </small>
+
 </footer>
+
+<script>
+
+function findStudent(){
+
+    const name =
+        document.getElementById("studentName").value.trim();
+
+    const father =
+        document.getElementById("fatherName").value.trim();
+
+    const result =
+        document.getElementById("result");
+
+    if(name === "" || father === ""){
+        result.style.display = "block";
+        result.innerHTML =
+        "⚠️ Please enter both Name and Father's Name.";
+        return;
+    }
+
+    /*
+    Demo record only.
+    Real student records should be added only
+    with school/project permission.
+    */
+
+    if(
+        name.toLowerCase() === "banti gupta" &&
+        father.toLowerCase() === "shambhu gupta"
+    ){
+
+        result.style.display = "block";
+
+        result.innerHTML = `
+            <h3>Student Record Found ✅</h3>
+            <p><strong>Name:</strong> Banti Gupta</p>
+            <p><strong>Role:</strong> Class Representative</p>
+            <p><strong>Batch:</strong> 123</p>
+            <p><strong>Timing:</strong> 12:10 PM – 02:10 PM</p>
+        `;
+
+    }else{
+
+        result.style.display = "block";
+
+        result.innerHTML =
+        "❌ Demo record not found. Please check your details.";
+
+    }
+
+}
+
+</script>
 
 </body>
   </html>
