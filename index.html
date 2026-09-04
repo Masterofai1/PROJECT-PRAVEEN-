@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>PROJECT PRAVEEN | DIGITAL MITRA</title>
 
 <style>
@@ -11,14 +10,13 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial,sans-serif;
     scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f5f8fc;
+    background:#f4f7fb;
     color:#172033;
-    line-height:1.6;
 }
 
 nav{
@@ -30,7 +28,7 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    box-shadow:0 3px 15px #0003;
+    box-shadow:0 4px 15px #0003;
 }
 
 .logo{
@@ -50,38 +48,19 @@ nav a{
     font-size:14px;
 }
 
-nav a:hover{
-    color:#38bdf8;
-}
-
 .hero{
-    min-height:90vh;
+    min-height:75vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:50px 20px;
-    background:linear-gradient(135deg,#071b35,#0b4f71,#0891b2);
+    padding:40px 20px;
+    background:linear-gradient(135deg,#071b35,#075985,#0891b2);
     color:white;
 }
 
-.hero-content{
-    max-width:850px;
-    animation:fadeUp 1s ease;
-}
-
-.badge{
-    display:inline-block;
-    padding:8px 18px;
-    border:1px solid #ffffff66;
-    border-radius:30px;
-    background:#ffffff18;
-    margin-bottom:20px;
-}
-
 .hero h1{
-    font-size:clamp(42px,9vw,78px);
-    line-height:1.05;
+    font-size:clamp(42px,9vw,75px);
 }
 
 .hero h1 span{
@@ -89,13 +68,13 @@ nav a:hover{
 }
 
 .hero h2{
-    font-size:clamp(22px,5vw,38px);
-    margin:15px 0;
+    margin:10px 0;
+    font-size:32px;
 }
 
 .hero p{
-    font-size:18px;
     color:#e0f2fe;
+    font-size:17px;
 }
 
 .btn{
@@ -107,43 +86,39 @@ nav a:hover{
     border-radius:30px;
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
 }
 
 section{
-    padding:70px 7%;
+    padding:65px 7%;
 }
 
-.section-title{
+.title{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:35px;
 }
 
-.section-title h2{
+.title h2{
+    color:#075985;
     font-size:32px;
-    color:#073763;
 }
 
-.section-title p{
+.title p{
     color:#64748b;
+    margin-top:5px;
 }
 
 .stats{
-    margin-top:-45px;
+    margin-top:-35px;
     position:relative;
+    padding:0 7%;
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:15px;
-    padding:0 7%;
 }
 
 .stat{
     background:white;
-    padding:25px 10px;
+    padding:22px 10px;
     text-align:center;
     border-radius:15px;
     box-shadow:0 8px 25px #00000012;
@@ -151,41 +126,36 @@ section{
 
 .stat h2{
     color:#0891b2;
-    font-size:32px;
-}
-
-.stat p{
-    color:#64748b;
+    font-size:30px;
 }
 
 .cards{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    gap:20px;
 }
 
 .card{
     background:white;
-    padding:28px;
-    border-radius:18px;
-    box-shadow:0 8px 25px #00000010;
+    padding:25px;
+    border-radius:17px;
+    box-shadow:0 8px 25px #00000012;
     border:1px solid #e2e8f0;
     transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-7px);
-    box-shadow:0 15px 30px #00000018;
+    transform:translateY(-5px);
 }
 
 .icon{
-    font-size:38px;
-    margin-bottom:12px;
+    font-size:35px;
+    margin-bottom:10px;
 }
 
 .card h3{
     color:#075985;
-    margin-bottom:8px;
+    margin-bottom:7px;
 }
 
 .card p{
@@ -197,75 +167,29 @@ section{
     color:white;
 }
 
-.dark .section-title h2{
+.dark .title h2{
     color:#67e8f9;
 }
 
-.dark .section-title p{
+.dark .title p{
     color:#cbd5e1;
 }
 
-.lab-box{
-    max-width:900px;
-    margin:auto;
-    background:#0b2b4d;
-    border-radius:20px;
-    padding:35px;
-    text-align:center;
-    box-shadow:0 15px 40px #0005;
-}
-
-.lab-number{
-    font-size:55px;
-    font-weight:bold;
-    color:#67e8f9;
-}
-
-.trainer{
-    text-align:center;
-}
-
-.avatar{
-    width:80px;
-    height:80px;
-    margin:0 auto 15px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#e0f2fe;
-    color:#075985;
-    font-size:30px;
-    font-weight:bold;
-}
-
-.notice{
-    max-width:900px;
-    margin:auto;
-}
-
-.notice-item{
-    background:white;
-    padding:18px 22px;
-    margin-bottom:12px;
-    border-left:5px solid #0891b2;
-    border-radius:8px;
-    box-shadow:0 5px 15px #0000000d;
-}
+/* PORTAL */
 
 .portal{
     max-width:650px;
     margin:auto;
     background:white;
     padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 30px #00000012;
+    border-radius:20px;
+    box-shadow:0 12px 35px #00000020;
 }
 
 .portal input{
     width:100%;
-    padding:13px;
-    margin:8px 0;
+    padding:14px;
+    margin:7px 0;
     border:1px solid #cbd5e1;
     border-radius:8px;
     font-size:15px;
@@ -273,7 +197,7 @@ section{
 
 .portal button{
     width:100%;
-    padding:13px;
+    padding:14px;
     margin-top:10px;
     border:0;
     border-radius:8px;
@@ -283,12 +207,106 @@ section{
     font-weight:bold;
 }
 
-.result{
+/* ID CARD */
+
+.id-card{
     display:none;
-    margin-top:20px;
-    padding:20px;
+    max-width:400px;
+    margin:30px auto 0;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px #0004;
+    border:1px solid #dbeafe;
+}
+
+.card-top{
+    background:linear-gradient(135deg,#071b35,#0891b2);
+    color:white;
+    text-align:center;
+    padding:22px;
+}
+
+.card-top h2{
+    font-size:22px;
+}
+
+.card-top p{
+    font-size:13px;
+    color:#cffafe;
+}
+
+.photo{
+    width:90px;
+    height:90px;
+    margin:18px auto 10px;
+    border-radius:50%;
+    background:#e0f2fe;
+    color:#075985;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:35px;
+    font-weight:bold;
+    border:4px solid white;
+}
+
+.card-body{
+    padding:22px;
+}
+
+.detail{
+    display:flex;
+    justify-content:space-between;
+    padding:9px 0;
+    border-bottom:1px solid #e2e8f0;
+    font-size:14px;
+}
+
+.detail span:first-child{
+    color:#64748b;
+}
+
+.detail span:last-child{
+    font-weight:bold;
+    color:#172033;
+}
+
+.verified{
+    margin-top:18px;
+    padding:10px;
+    text-align:center;
     background:#ecfeff;
-    border-radius:12px;
+    color:#075985;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.print-btn{
+    margin-top:15px;
+    width:100%;
+    padding:12px;
+    border:0;
+    border-radius:8px;
+    background:#172033;
+    color:white;
+    font-weight:bold;
+}
+
+/* NOTICE */
+
+.notice{
+    max-width:900px;
+    margin:auto;
+}
+
+.notice-item{
+    background:white;
+    padding:17px;
+    margin:10px 0;
+    border-left:5px solid #0891b2;
+    border-radius:8px;
+    box-shadow:0 5px 15px #0000000d;
 }
 
 footer{
@@ -302,23 +320,9 @@ footer strong{
     color:#67e8f9;
 }
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
 @media(max-width:800px){
-    nav{
-        padding:14px 5%;
-    }
 
-    nav div:last-child{
+    nav a{
         display:none;
     }
 
@@ -331,21 +335,42 @@ footer strong{
     }
 
     section{
-        padding:55px 5%;
+        padding:50px 5%;
     }
 }
 
 @media(max-width:450px){
-    .hero{
-        min-height:80vh;
-    }
 
-    .stats{
-        padding:0 5%;
+    .hero h2{
+        font-size:25px;
     }
 
     .stat h2{
         font-size:25px;
+    }
+}
+
+@media print{
+
+    body *{
+        visibility:hidden;
+    }
+
+    .id-card,
+    .id-card *{
+        visibility:visible;
+    }
+
+    .id-card{
+        position:absolute;
+        left:0;
+        top:0;
+        display:block !important;
+        box-shadow:none;
+    }
+
+    .print-btn{
+        display:none;
     }
 }
 </style>
@@ -353,329 +378,418 @@ footer strong{
 
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-    <div class="logo">PROJECT <span>PRAVEEN</span></div>
+<!-- NAVBAR -->
 
-    <div>
-        <a href="#home">Home</a>
-        <a href="#course">Course</a>
-        <a href="#lab">Lab</a>
-        <a href="#trainers">Trainers</a>
-        <a href="#portal">Portal</a>
-    </div>
+<nav>
+
+<div class="logo">
+PROJECT <span>PRAVEEN</span>
+</div>
+
+<div>
+<a href="#home">Home</a>
+<a href="#course">Course</a>
+<a href="#lab">Lab</a>
+<a href="#portal">Student Portal</a>
+</div>
+
 </nav>
 
+
 <!-- HERO -->
+
 <section class="hero" id="home">
-    <div class="hero-content">
 
-        <div class="badge">DIGITAL SKILL DEVELOPMENT PROGRAM</div>
+<div>
 
-        <h1>PROJECT <span>PRAVEEN</span></h1>
+<p>🚀 DIGITAL SKILL DEVELOPMENT PROGRAM</p>
 
-        <h2>DIGITAL MITRA</h2>
+<h1>PROJECT <span>PRAVEEN</span></h1>
 
-        <p>
-            Learn • Practice • Create
-        </p>
+<h2>DIGITAL MITRA</h2>
 
-        <p>
-            Empowering students with digital knowledge,
-            computer skills and confidence for the future.
-        </p>
+<p>Learn • Practice • Create</p>
 
-        <a href="#course" class="btn">Explore Digital Mitra</a>
-
-    </div>
-</section>
-
-<!-- STATS -->
-<div class="stats">
-
-    <div class="stat">
-        <h2>201</h2>
-        <p>Students</p>
-    </div>
-
-    <div class="stat">
-        <h2>35</h2>
-        <p>Computers</p>
-    </div>
-
-    <div class="stat">
-        <h2>03</h2>
-        <p>Trainers</p>
-    </div>
-
-    <div class="stat">
-        <h2>01</h2>
-        <p>Digital Mission</p>
-    </div>
+<a href="#portal" class="btn">
+Student Portal
+</a>
 
 </div>
 
+</section>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat">
+<h2>201</h2>
+<p>Students</p>
+</div>
+
+<div class="stat">
+<h2>35</h2>
+<p>Computers</p>
+</div>
+
+<div class="stat">
+<h2>03</h2>
+<p>Trainers</p>
+</div>
+
+<div class="stat">
+<h2>01</h2>
+<p>Digital Mission</p>
+</div>
+
+</div>
+
+
 <!-- COURSE -->
+
 <section id="course">
 
-    <div class="section-title">
-        <h2>Digital Mitra Course</h2>
-        <p>Building practical digital skills for students</p>
-    </div>
+<div class="title">
 
-    <div class="cards">
+<h2>Digital Mitra Course</h2>
 
-        <div class="card">
-            <div class="icon">💻</div>
-            <h3>Computer Basics</h3>
-            <p>
-                Computer operation, hardware basics,
-                software and file management.
-            </p>
-        </div>
+<p>Practical digital skills for students</p>
 
-        <div class="card">
-            <div class="icon">🌐</div>
-            <h3>Internet & Networking</h3>
-            <p>
-                Internet fundamentals, browsers,
-                networking concepts and online services.
-            </p>
-        </div>
+</div>
 
-        <div class="card">
-            <div class="icon">📱</div>
-            <h3>Digital Skills</h3>
-            <p>
-                Smartphone, digital tools and
-                responsible use of technology.
-            </p>
-        </div>
 
-        <div class="card">
-            <div class="icon">⌨️</div>
-            <h3>Typing & Productivity</h3>
-            <p>
-                Typing practice, documents,
-                presentations and productivity tools.
-            </p>
-        </div>
+<div class="cards">
 
-        <div class="card">
-            <div class="icon">🔐</div>
-            <h3>Digital Safety</h3>
-            <p>
-                Strong passwords, privacy,
-                cyber awareness and safe browsing.
-            </p>
-        </div>
+<div class="card">
+<div class="icon">💻</div>
+<h3>Computer Basics</h3>
+<p>Computer operation, hardware, software and file management.</p>
+</div>
 
-        <div class="card">
-            <div class="icon">🎯</div>
-            <h3>Soft Skills</h3>
-            <p>
-                Communication, confidence,
-                teamwork and personality development.
-            </p>
-        </div>
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Internet & Networking</h3>
+<p>Internet fundamentals, browsers and basic networking.</p>
+</div>
 
-    </div>
+<div class="card">
+<div class="icon">📱</div>
+<h3>Digital Skills</h3>
+<p>Smartphone, digital tools and technology awareness.</p>
+</div>
+
+<div class="card">
+<div class="icon">⌨️</div>
+<h3>Typing & Productivity</h3>
+<p>Typing, documents, presentations and productivity tools.</p>
+</div>
+
+<div class="card">
+<div class="icon">🔐</div>
+<h3>Digital Safety</h3>
+<p>Privacy, passwords, cyber awareness and safe browsing.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Soft Skills</h3>
+<p>Communication, confidence, teamwork and personality development.</p>
+</div>
+
+</div>
 
 </section>
+
 
 <!-- LAB -->
-<section id="lab" class="dark">
 
-    <div class="section-title">
-        <h2>Computer Laboratory</h2>
-        <p>Practice. Explore. Create.</p>
-    </div>
+<section class="dark" id="lab">
 
-    <div class="lab-box">
+<div class="title">
 
-        <div class="lab-number">35</div>
+<h2>Computer Laboratory</h2>
 
-        <h2>Computers Available</h2>
+<p>Practice • Explore • Create</p>
 
-        <p>
-            The Digital Mitra Computer Lab provides
-            students with a practical environment
-            to learn and practice digital skills.
-        </p>
+</div>
 
-    </div>
+<div style="text-align:center">
+
+<div style="font-size:65px;color:#67e8f9;font-weight:bold;">
+35
+</div>
+
+<h2>Computers Available</h2>
+
+<p>
+Digital Mitra students get a practical environment
+for computer learning and practice.
+</p>
+
+</div>
 
 </section>
+
 
 <!-- TRAINERS -->
-<section id="trainers">
 
-    <div class="section-title">
-        <h2>Our Trainers</h2>
-        <p>Guiding students towards digital excellence</p>
-    </div>
-
-    <div class="cards">
-
-        <div class="card trainer">
-            <div class="avatar">A</div>
-            <h3>Archit Vashpnay</h3>
-            <p>Digital Mitra Trainer</p>
-        </div>
-
-        <div class="card trainer">
-            <div class="avatar">S</div>
-            <h3>Shivansh Tripathi</h3>
-            <p>Digital Mitra Trainer</p>
-        </div>
-
-        <div class="card trainer">
-            <div class="avatar">J</div>
-            <h3>Jiya</h3>
-            <p>Digital Mitra Trainer</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- NOTICE -->
 <section>
 
-    <div class="section-title">
-        <h2>Notice Board</h2>
-        <p>Latest Digital Mitra updates</p>
-    </div>
+<div class="title">
 
-    <div class="notice">
+<h2>Our Trainers</h2>
 
-        <div class="notice-item">
-            📢 <strong>Digital Mitra:</strong>
-            Regular computer practice is encouraged.
-        </div>
+<p>Guiding students towards digital excellence</p>
 
-        <div class="notice-item">
-            📚 <strong>Learning:</strong>
-            Practice your digital skills regularly.
-        </div>
+</div>
 
-        <div class="notice-item">
-            ⭐ <strong>Mission:</strong>
-            Learn • Practice • Create
-        </div>
 
-    </div>
+<div class="cards">
+
+<div class="card" style="text-align:center">
+<div class="icon">👨‍🏫</div>
+<h3>Archit Vashpnay</h3>
+<p>Digital Mitra Trainer</p>
+</div>
+
+<div class="card" style="text-align:center">
+<div class="icon">👨‍🏫</div>
+<h3>Shivansh Tripathi</h3>
+<p>Digital Mitra Trainer</p>
+</div>
+
+<div class="card" style="text-align:center">
+<div class="icon">👩‍🏫</div>
+<h3>Jiya</h3>
+<p>Digital Mitra Trainer</p>
+</div>
+
+</div>
 
 </section>
+
+
+<!-- NOTICE -->
+
+<section>
+
+<div class="title">
+
+<h2>Notice Board</h2>
+
+<p>Digital Mitra updates</p>
+
+</div>
+
+<div class="notice">
+
+<div class="notice-item">
+📢 Regular computer practice is encouraged.
+</div>
+
+<div class="notice-item">
+📚 Keep learning and improving your digital skills.
+</div>
+
+<div class="notice-item">
+⭐ Mission: Learn • Practice • Create
+</div>
+
+</div>
+
+</section>
+
 
 <!-- STUDENT PORTAL -->
-<section id="portal" class="dark">
 
-    <div class="section-title">
-        <h2>Student Portal</h2>
-        <p>Demo ID verification system</p>
-    </div>
+<section class="dark" id="portal">
 
-    <div class="portal">
+<div class="title">
 
-        <input id="studentName"
-               type="text"
-               placeholder="Enter Student Name">
+<h2>Student Portal</h2>
 
-        <input id="fatherName"
-               type="text"
-               placeholder="Enter Father's Name">
+<p>Digital Mitra ID Verification</p>
 
-        <button onclick="findStudent()">
-            Find My ID
-        </button>
+</div>
 
-        <div id="result" class="result"></div>
 
-    </div>
+<div class="portal">
+
+<input
+id="studentName"
+type="text"
+placeholder="Enter Student Name"
+>
+
+<input
+id="fatherName"
+type="text"
+placeholder="Enter Father's Name"
+>
+
+<input
+id="batch"
+type="text"
+placeholder="Enter Batch Number"
+>
+
+<button onclick="verifyStudent()">
+VERIFY STUDENT
+</button>
+
+
+<!-- ID CARD -->
+
+<div class="id-card" id="idCard">
+
+<div class="card-top">
+
+<h2>PROJECT PRAVEEN</h2>
+
+<p>DIGITAL MITRA</p>
+
+<div class="photo">
+BG
+</div>
+
+<h3 id="cardName">
+Banti Gupta
+</h3>
+
+<p>
+CLASS REPRESENTATIVE
+</p>
+
+</div>
+
+
+<div class="card-body">
+
+<div class="detail">
+<span>Father's Name</span>
+<span id="cardFather">Shambhu Gupta</span>
+</div>
+
+<div class="detail">
+<span>Batch No.</span>
+<span id="cardBatch">123</span>
+</div>
+
+<div class="detail">
+<span>Role</span>
+<span>Lab CR</span>
+</div>
+
+<div class="detail">
+<span>Timing</span>
+<span>12:10 – 02:10</span>
+</div>
+
+<div class="detail">
+<span>Status</span>
+<span>Active</span>
+</div>
+
+<div class="verified">
+✅ VERIFIED DIGITAL MITRA STUDENT
+</div>
+
+<button class="print-btn" onclick="window.print()">
+🖨️ PRINT ID CARD
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
+
 <!-- FOOTER -->
+
 <footer>
 
-    <h2>PROJECT <strong>PRAVEEN</strong></h2>
+<h2>
+PROJECT <strong>PRAVEEN</strong>
+</h2>
 
-    <p>DIGITAL MITRA</p>
+<p>DIGITAL MITRA</p>
 
-    <p>Learn • Practice • Create</p>
+<p>Learn • Practice • Create</p>
 
-    <br>
+<br>
 
-    <p>
-        Computer Lab • Rajkiye Inter College
-    </p>
+<p>
+Computer Lab • Rajkiye Inter College
+</p>
 
-    <p>
-        Lab CR: <strong>Banti Gupta</strong>
-    </p>
+<p>
+Lab CR: <strong>Banti Gupta</strong>
+</p>
 
-    <br>
+<br>
 
-    <small>
-        © 2026 Project Praveen | Digital Mitra
-    </small>
+<small>
+© 2026 Project Praveen | Digital Mitra
+</small>
 
 </footer>
 
+
 <script>
 
-function findStudent(){
+function verifyStudent(){
 
-    const name =
-        document.getElementById("studentName").value.trim();
+let name =
+document.getElementById("studentName").value.trim();
 
-    const father =
-        document.getElementById("fatherName").value.trim();
+let father =
+document.getElementById("fatherName").value.trim();
 
-    const result =
-        document.getElementById("result");
+let batch =
+document.getElementById("batch").value.trim();
 
-    if(name === "" || father === ""){
-        result.style.display = "block";
-        result.innerHTML =
-        "⚠️ Please enter both Name and Father's Name.";
-        return;
-    }
+let card =
+document.getElementById("idCard");
 
-    /*
-    Demo record only.
-    Real student records should be added only
-    with school/project permission.
-    */
 
-    if(
-        name.toLowerCase() === "banti gupta" &&
-        father.toLowerCase() === "shambhu gupta"
-    ){
+if(
+name.toLowerCase() === "banti gupta" &&
+father.toLowerCase() === "shambhu gupta" &&
+batch === "123"
+){
 
-        result.style.display = "block";
+document.getElementById("cardName").innerText =
+"Banti Gupta";
 
-        result.innerHTML = `
-            <h3>Student Record Found ✅</h3>
-            <p><strong>Name:</strong> Banti Gupta</p>
-            <p><strong>Role:</strong> Class Representative</p>
-            <p><strong>Batch:</strong> 123</p>
-            <p><strong>Timing:</strong> 12:10 PM – 02:10 PM</p>
-        `;
+document.getElementById("cardFather").innerText =
+"Shambhu Gupta";
 
-    }else{
+document.getElementById("cardBatch").innerText =
+"123";
 
-        result.style.display = "block";
+card.style.display = "block";
 
-        result.innerHTML =
-        "❌ Demo record not found. Please check your details.";
+card.scrollIntoView({
+behavior:"smooth"
+});
 
-    }
+}else{
+
+card.style.display = "none";
+
+alert(
+"❌ Student record not found.\n\nThis is currently a demo verification system."
+);
+
+}
 
 }
 
 </script>
 
 </body>
-  </html>
+    </html>
