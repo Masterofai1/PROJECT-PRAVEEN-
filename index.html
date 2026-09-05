@@ -1911,4 +1911,164 @@ document
 </script>
 
 </body>
-    </html>
+   </html>function findID(){
+
+    const name =
+    document.getElementById("studentName")
+    .value.trim().toLowerCase();
+
+    const father =
+    document.getElementById("fatherName")
+    .value.trim().toLowerCase();
+
+    const batch =
+    document.getElementById("batch")
+    .value.trim();
+
+    const card =
+    document.getElementById("idCard");
+
+
+    /* =========================
+       BANTI GUPTA
+    ========================= */
+
+    if(
+        name === "banti gupta" &&
+        father === "shambhu gupta" &&
+        batch === "123"
+    ){
+
+        document.querySelector(".profile").textContent = "BG";
+
+        document.querySelector(".details").innerHTML = `
+
+            <div class="detail">
+                <span>Name</span>
+                <span>Banti Gupta</span>
+            </div>
+
+            <div class="detail">
+                <span>Father's Name</span>
+                <span>Shambhu Gupta</span>
+            </div>
+
+            <div class="detail">
+                <span>Batch No.</span>
+                <span>123</span>
+            </div>
+
+            <div class="detail">
+                <span>ID No.</span>
+                <span>2199046155</span>
+            </div>
+
+            <div class="detail">
+                <span>Role</span>
+                <span>Lab CR</span>
+            </div>
+
+            <div class="detail">
+                <span>Timing</span>
+                <span>12:10 – 02:10</span>
+            </div>
+
+            <div class="detail">
+                <span>Validity</span>
+                <span>01/04/2026</span>
+            </div>
+
+            <div class="detail">
+                <span>Status</span>
+                <span class="active">● ACTIVE</span>
+            </div>
+        `;
+
+        card.style.display = "block";
+
+        card.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+        return;
+    }
+
+
+    /* =========================
+       NEHA
+    ========================= */
+
+    if(
+        name === "neha" &&
+        father === "nadim" &&
+        batch === "136"
+    ){
+
+        document.querySelector(".profile").textContent = "N";
+
+        document.querySelector(".details").innerHTML = `
+
+            <div class="detail">
+                <span>Name</span>
+                <span>Neha</span>
+            </div>
+
+            <div class="detail">
+                <span>Father's Name</span>
+                <span>Nadim</span>
+            </div>
+
+            <div class="detail">
+                <span>Class</span>
+                <span>11th D</span>
+            </div>
+
+            <div class="detail">
+                <span>Batch No.</span>
+                <span>136</span>
+            </div>
+
+            <div class="detail">
+                <span>ID No.</span>
+                <span>2199167379</span>
+            </div>
+
+            <div class="detail">
+                <span>Role</span>
+                <span>Student</span>
+            </div>
+
+            <div class="detail">
+                <span>Validity</span>
+                <span>01/04/2027</span>
+            </div>
+
+            <div class="detail">
+                <span>Status</span>
+                <span class="active">● ACTIVE</span>
+            </div>
+        `;
+
+        card.style.display = "block";
+
+        card.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+        return;
+    }
+
+
+    /* =========================
+       RECORD NOT FOUND
+    ========================= */
+
+    card.style.display = "none";
+
+    alert(
+        "❌ Record not found.\n\n" +
+        "Please check Name, Father's Name and Batch Number."
+    );
+}
