@@ -2,710 +2,1395 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050b1d">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#030711">
 <title>PROJECT PRAVEEN | DIGITAL MITRA</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth
+}
+
 :root{
- --blue:#2196f3;--cyan:#00e5ff;--purple:#8b5cf6;
- --green:#22c55e;--white:#fff;--muted:#aab5cf;
- --border:rgba(255,255,255,.13);
- --card:rgba(255,255,255,.065)
+--bg:#030711;
+--blue:#2196f3;
+--cyan:#00e5ff;
+--purple:#8b5cf6;
+--green:#22c55e;
+--muted:#aab5cf;
+--border:rgba(255,255,255,.13);
+--card:rgba(255,255,255,.065)
 }
+
 body{
- font-family:Arial,Helvetica,sans-serif;
- background:#030711;color:#fff;overflow-x:hidden
+font-family:Arial,Helvetica,sans-serif;
+background:var(--bg);
+color:#fff;
+overflow-x:hidden
 }
+
 button,input{font:inherit}
 
 /* LOADER */
+
 #loader{
- position:fixed;inset:0;background:#030711;
- display:flex;flex-direction:column;justify-content:center;
- align-items:center;z-index:99999;transition:.7s
+position:fixed;
+inset:0;
+z-index:99999;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:#030711;
+transition:.7s
 }
+
 .loader-title{
- font-size:34px;font-weight:900;letter-spacing:3px;
- background:linear-gradient(90deg,#00e5ff,#2196f3,#8b5cf6);
- -webkit-background-clip:text;color:transparent;
- animation:pulse 1.4s infinite
+font-size:34px;
+font-weight:900;
+letter-spacing:3px;
+background:linear-gradient(90deg,#00e5ff,#2196f3,#8b5cf6);
+-webkit-background-clip:text;
+color:transparent;
+animation:pulse 1.4s infinite
 }
+
 .loader-sub{
- margin-top:9px;font-size:12px;letter-spacing:4px;color:#9ba8c4
+margin-top:10px;
+color:#9ba8c4;
+font-size:11px;
+letter-spacing:4px
 }
+
 .loader-bar{
- margin-top:25px;width:210px;height:3px;
- background:#17203c;border-radius:20px;overflow:hidden
+width:210px;
+height:3px;
+margin-top:25px;
+background:#17203c;
+border-radius:20px;
+overflow:hidden
 }
+
 .loader-bar span{
- display:block;width:38%;height:100%;
- background:linear-gradient(90deg,var(--cyan),var(--purple));
- animation:load 1.2s infinite
+display:block;
+width:38%;
+height:100%;
+background:linear-gradient(90deg,var(--cyan),var(--purple));
+animation:load 1.2s infinite
 }
-.hide{opacity:0;visibility:hidden}
+
+.hide{
+opacity:0;
+visibility:hidden
+}
+
 @keyframes load{
- from{transform:translateX(-150%)}
- to{transform:translateX(420%)}
+from{transform:translateX(-150%)}
+to{transform:translateX(420%)}
 }
-@keyframes pulse{50%{transform:scale(1.05)}}
+
+@keyframes pulse{
+50%{transform:scale(1.05)}
+}
 
 /* FUTURISTIC BACKGROUND */
+
 .background{
- position:fixed;inset:0;z-index:-3;overflow:hidden;
- background:radial-gradient(circle at 50% 25%,#0b1835 0,#030711 58%)
+position:fixed;
+inset:0;
+z-index:-3;
+overflow:hidden;
+background:radial-gradient(circle at 50% 25%,#0b1835 0,#030711 58%)
 }
+
 .grid-bg{
- position:absolute;inset:-30%;
- background-image:
- linear-gradient(rgba(0,229,255,.08) 1px,transparent 1px),
- linear-gradient(90deg,rgba(0,229,255,.08) 1px,transparent 1px);
- background-size:55px 55px;
- transform:perspective(500px) rotateX(58deg) translateY(90px);
- animation:gridMove 12s linear infinite;opacity:.6
+position:absolute;
+inset:-30%;
+background-image:
+linear-gradient(rgba(0,229,255,.08) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,229,255,.08) 1px,transparent 1px);
+background-size:55px 55px;
+transform:perspective(500px) rotateX(58deg) translateY(90px);
+animation:gridMove 12s linear infinite;
+opacity:.6
 }
+
 .scan{
- position:absolute;left:0;width:100%;height:2px;
- background:linear-gradient(90deg,transparent,#00e5ff,transparent);
- box-shadow:0 0 25px #00e5ff;
- animation:scan 6s linear infinite;opacity:.35
+position:absolute;
+left:0;
+width:100%;
+height:2px;
+background:linear-gradient(90deg,transparent,#00e5ff,transparent);
+box-shadow:0 0 25px #00e5ff;
+animation:scan 6s linear infinite;
+opacity:.35
 }
+
 .circuit{
- position:absolute;border:1px solid rgba(0,229,255,.16);
- box-shadow:0 0 18px rgba(0,229,255,.08);
- animation:circuitPulse 4s infinite
+position:absolute;
+border:1px solid rgba(0,229,255,.16);
+box-shadow:0 0 18px rgba(0,229,255,.08);
+animation:circuitPulse 4s infinite
 }
-.c1{width:260px;height:120px;left:4%;top:25%;border-right:0}
-.c2{width:300px;height:160px;right:2%;top:55%;border-left:0}
-.c3{width:180px;height:180px;left:45%;top:8%;border-radius:50%}
+
+.c1{
+width:260px;
+height:120px;
+left:4%;
+top:25%;
+border-right:0
+}
+
+.c2{
+width:300px;
+height:160px;
+right:2%;
+top:55%;
+border-left:0
+}
+
+.c3{
+width:180px;
+height:180px;
+left:45%;
+top:8%;
+border-radius:50%
+}
+
 .node{
- position:absolute;width:7px;height:7px;border-radius:50%;
- background:#00e5ff;box-shadow:0 0 15px #00e5ff;
- animation:nodePulse 2s infinite
+position:absolute;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#00e5ff;
+box-shadow:0 0 15px #00e5ff;
+animation:nodePulse 2s infinite
 }
-.n1{left:8%;top:25%}.n2{right:7%;top:55%}.n3{left:54%;top:18%}
+
+.n1{left:8%;top:25%}
+.n2{right:7%;top:55%}
+.n3{left:54%;top:18%}
+
 .glow{
- position:absolute;width:350px;height:350px;border-radius:50%;
- filter:blur(110px);opacity:.13;
- animation:moveGlow 10s infinite alternate
+position:absolute;
+width:350px;
+height:350px;
+border-radius:50%;
+filter:blur(110px);
+opacity:.13;
+animation:moveGlow 10s infinite alternate
 }
-.glow.one{background:#2196f3;left:-100px;top:100px}
-.glow.two{background:#8b5cf6;right:-100px;top:300px}
-.glow.three{background:#00e5ff;left:40%;bottom:-150px}
+
+.glow.one{
+background:#2196f3;
+left:-100px;
+top:100px
+}
+
+.glow.two{
+background:#8b5cf6;
+right:-100px;
+top:300px
+}
+
+.glow.three{
+background:#00e5ff;
+left:40%;
+bottom:-150px
+}
+
 @keyframes gridMove{
- to{transform:perspective(500px) rotateX(58deg) translateY(145px)}
+to{
+transform:perspective(500px) rotateX(58deg) translateY(145px)
 }
-@keyframes scan{from{top:-5%}to{top:105%}}
-@keyframes moveGlow{to{transform:translate(100px,70px)}}
-@keyframes circuitPulse{50%{opacity:.5}}
-@keyframes nodePulse{50%{transform:scale(1.7);opacity:.5}}
+}
+
+@keyframes scan{
+from{top:-5%}
+to{top:105%}
+}
+
+@keyframes moveGlow{
+to{transform:translate(100px,70px)}
+}
+
+@keyframes circuitPulse{
+50%{opacity:.5}
+}
+
+@keyframes nodePulse{
+50%{
+transform:scale(1.7);
+opacity:.5
+}
+}
 
 .particles{
- position:fixed;inset:0;z-index:-1;pointer-events:none
+position:fixed;
+inset:0;
+z-index:-1;
+pointer-events:none
 }
+
 .particle{
- position:absolute;width:3px;height:3px;border-radius:50%;
- background:#00e5ff;opacity:.5;
- animation:particleMove linear infinite
+position:absolute;
+width:3px;
+height:3px;
+border-radius:50%;
+background:#00e5ff;
+opacity:.5;
+animation:particleMove linear infinite
 }
+
 @keyframes particleMove{
- from{transform:translateY(110vh);opacity:0}
- 20%{opacity:.6}80%{opacity:.6}
- to{transform:translateY(-10vh);opacity:0}
+from{
+transform:translateY(110vh);
+opacity:0
+}
+20%{opacity:.6}
+80%{opacity:.6}
+to{
+transform:translateY(-10vh);
+opacity:0
+}
 }
 
 /* NAV */
+
 nav{
- position:fixed;top:0;left:0;width:100%;z-index:1000;
- padding:14px 7%;display:flex;justify-content:space-between;
- align-items:center;background:rgba(3,7,17,.76);
- backdrop-filter:blur(18px);
- border-bottom:1px solid rgba(255,255,255,.08)
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+padding:14px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(3,7,17,.76);
+backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(255,255,255,.08)
 }
-.logo{display:flex;align-items:center;gap:10px}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px
+}
+
 .logo-box{
- width:43px;height:43px;border-radius:13px;
- display:flex;align-items:center;justify-content:center;
- font-weight:900;background:linear-gradient(135deg,#2196f3,#8b5cf6);
- box-shadow:0 0 25px rgba(33,150,243,.35)
+width:43px;
+height:43px;
+border-radius:13px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+background:linear-gradient(135deg,#2196f3,#8b5cf6);
+box-shadow:0 0 25px rgba(33,150,243,.35)
 }
-.logo-text{font-weight:900;font-size:15px}
+
+.logo-text{
+font-weight:900;
+font-size:15px
+}
+
 .logo-text small{
- display:block;color:#00e5ff;letter-spacing:2px;
- font-size:9px;margin-top:3px
+display:block;
+margin-top:3px;
+color:#00e5ff;
+letter-spacing:2px;
+font-size:9px
 }
-.nav-links{display:flex;gap:23px}
+
+.nav-links{
+display:flex;
+gap:23px
+}
+
 .nav-links a{
- color:#cbd4e9;text-decoration:none;font-size:13px;
- transition:.3s
+color:#cbd4e9;
+text-decoration:none;
+font-size:13px;
+transition:.3s
 }
-.nav-links a:hover{color:#00e5ff;text-shadow:0 0 15px #00e5ff}
-.menu{display:none;font-size:25px;cursor:pointer}
+
+.nav-links a:hover{
+color:#00e5ff;
+text-shadow:0 0 15px #00e5ff
+}
+
+.menu{
+display:none;
+font-size:25px;
+cursor:pointer
+}
 
 /* HERO */
+
 .hero{
- min-height:100vh;padding:150px 7% 80px;
- display:flex;align-items:center;justify-content:space-between;gap:40px
+min-height:100vh;
+padding:150px 7% 80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px
 }
-.hero-content{max-width:700px;animation:heroIn 1s ease}
+
+.hero-content{
+max-width:700px;
+animation:heroIn 1s ease
+}
+
 @keyframes heroIn{
- from{opacity:0;transform:translateY(40px)}
- to{opacity:1;transform:translateY(0)}
+from{
+opacity:0;
+transform:translateY(40px)
 }
+to{
+opacity:1;
+transform:translateY(0)
+}
+}
+
 .badge{
- display:inline-block;padding:9px 16px;
- border:1px solid rgba(0,229,255,.3);
- background:rgba(0,229,255,.06);
- color:#00e5ff;border-radius:50px;
- font-size:11px;letter-spacing:2px
+display:inline-block;
+padding:9px 16px;
+border:1px solid rgba(0,229,255,.3);
+background:rgba(0,229,255,.06);
+color:#00e5ff;
+border-radius:50px;
+font-size:11px;
+letter-spacing:2px
 }
+
 .hero h1{
- margin-top:22px;font-size:clamp(50px,8vw,90px);
- line-height:.92;letter-spacing:-4px;font-weight:900
+margin-top:22px;
+font-size:clamp(50px,8vw,90px);
+line-height:.92;
+letter-spacing:-4px;
+font-weight:900
 }
+
 .gradient{
- background:linear-gradient(90deg,#fff,#00e5ff,#2196f3,#8b5cf6);
- background-size:300%;-webkit-background-clip:text;
- color:transparent;animation:gradient 5s infinite
+background:linear-gradient(90deg,#fff,#00e5ff,#2196f3,#8b5cf6);
+background-size:300%;
+-webkit-background-clip:text;
+color:transparent;
+animation:gradient 5s infinite
 }
-@keyframes gradient{50%{background-position:100%}}
-.hero h2{margin-top:20px;font-size:30px;color:#dbe3f5}
+
+@keyframes gradient{
+50%{background-position:100%}
+}
+
+.hero h2{
+margin-top:20px;
+font-size:30px;
+color:#dbe3f5
+}
+
 .hero p{
- margin-top:18px;color:#aab5cf;line-height:1.8;max-width:600px
+margin-top:18px;
+color:#aab5cf;
+line-height:1.8;
+max-width:600px
 }
-.buttons{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+
+.buttons{
+display:flex;
+gap:14px;
+margin-top:30px;
+flex-wrap:wrap
+}
+
 .btn{
- border:none;cursor:pointer;text-decoration:none;
- display:inline-block;padding:14px 22px;border-radius:13px;
- color:white;font-weight:bold;font-size:13px;transition:.35s
+border:none;
+cursor:pointer;
+text-decoration:none;
+display:inline-block;
+padding:14px 22px;
+border-radius:13px;
+color:white;
+font-weight:bold;
+font-size:13px;
+transition:.35s
 }
+
 .btn-primary{
- background:linear-gradient(135deg,#2196f3,#8b5cf6);
- box-shadow:0 0 30px rgba(33,150,243,.25)
+background:linear-gradient(135deg,#2196f3,#8b5cf6);
+box-shadow:0 0 30px rgba(33,150,243,.25)
 }
+
 .btn-secondary{
- background:rgba(255,255,255,.07);
- border:1px solid rgba(255,255,255,.12)
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.12)
 }
+
 .btn:hover{
- transform:translateY(-5px);
- box-shadow:0 15px 35px rgba(0,0,0,.35)
+transform:translateY(-5px);
+box-shadow:0 15px 35px rgba(0,0,0,.35)
 }
+
 .hero-visual{
- width:390px;height:390px;
- display:flex;align-items:center;justify-content:center;
- position:relative
+width:390px;
+height:390px;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative
 }
+
 .orbit{
- position:absolute;border:1px solid rgba(0,229,255,.25);
- border-radius:50%;animation:rotate 10s linear infinite
+position:absolute;
+border:1px solid rgba(0,229,255,.25);
+border-radius:50%;
+animation:rotate 10s linear infinite
 }
-.orbit.one{width:100%;height:100%}
+
+.orbit.one{
+width:100%;
+height:100%
+}
+
 .orbit.two{
- width:75%;height:75%;animation-duration:7s;
- animation-direction:reverse
+width:75%;
+height:75%;
+animation-duration:7s;
+animation-direction:reverse
 }
+
 .orbit.three{
- width:50%;height:50%;animation-duration:5s
+width:50%;
+height:50%;
+animation-duration:5s
 }
-@keyframes rotate{to{transform:rotate(360deg)}}
+
+@keyframes rotate{
+to{transform:rotate(360deg)}
+}
+
 .orb{
- width:150px;height:150px;border-radius:35px;
- display:flex;align-items:center;justify-content:center;
- flex-direction:column;background:rgba(255,255,255,.06);
- border:1px solid rgba(255,255,255,.2);
- backdrop-filter:blur(15px);
- box-shadow:0 0 60px rgba(0,229,255,.2);
- animation:orbFloat 3s infinite ease-in-out
+width:150px;
+height:150px;
+border-radius:35px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.2);
+backdrop-filter:blur(15px);
+box-shadow:0 0 60px rgba(0,229,255,.2);
+animation:orbFloat 3s infinite ease-in-out
 }
-.orb-icon{font-size:50px}
+
+.orb-icon{
+font-size:50px
+}
+
 .orb strong{
- margin-top:8px;color:#00e5ff;font-size:11px;letter-spacing:2px
+margin-top:8px;
+color:#00e5ff;
+font-size:11px;
+letter-spacing:2px
 }
-@keyframes orbFloat{50%{transform:translateY(-12px)}}
+
+@keyframes orbFloat{
+50%{transform:translateY(-12px)}
+}
 
 /* SECTIONS */
-section{padding:100px 7%}
+
+section{
+padding:100px 7%
+}
+
 .section-title{
- text-align:center;max-width:700px;margin:0 auto 55px
+text-align:center;
+max-width:700px;
+margin:0 auto 55px
 }
-.tag{color:#00e5ff;font-size:11px;font-weight:bold;letter-spacing:3px}
+
+.tag{
+color:#00e5ff;
+font-size:11px;
+font-weight:bold;
+letter-spacing:3px
+}
+
 .section-title h2{
- margin-top:12px;font-size:clamp(32px,5vw,48px)
+margin-top:12px;
+font-size:clamp(32px,5vw,48px)
 }
+
 .section-title p{
- margin-top:14px;color:#9eabc5;line-height:1.7
+margin-top:14px;
+color:#9eabc5;
+line-height:1.7
 }
 
 /* STATS */
-.stats{padding-top:20px}
-.stats-grid{
- display:grid;grid-template-columns:repeat(4,1fr);gap:18px
-}
-.stat{
- text-align:center;padding:30px 15px;
- background:var(--card);border:1px solid var(--border);
- border-radius:22px;backdrop-filter:blur(15px);
- transition:.4s;cursor:pointer
-}
-.stat:hover{
- transform:translateY(-8px);
- border-color:rgba(0,229,255,.4)
-}
-.stat-icon{font-size:28px}
-.number{
- margin-top:10px;font-size:40px;font-weight:900;
- background:linear-gradient(90deg,#00e5ff,#2196f3);
- -webkit-background-clip:text;color:transparent
-}
-.stat p{color:#9ca9c2;margin-top:5px;font-size:13px}
 
-/* CARDS */
+.stats{
+padding-top:20px
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px
+}
+
+.stat{
+text-align:center;
+padding:30px 15px;
+background:var(--card);
+border:1px solid var(--border);
+border-radius:22px;
+backdrop-filter:blur(15px);
+transition:.4s;
+cursor:pointer
+}
+
+.stat:hover{
+transform:translateY(-8px);
+border-color:rgba(0,229,255,.4)
+}
+
+.stat-icon{
+font-size:28px
+}
+
+.number{
+margin-top:10px;
+font-size:40px;
+font-weight:900;
+background:linear-gradient(90deg,#00e5ff,#2196f3);
+-webkit-background-clip:text;
+color:transparent
+}
+
+.stat p{
+color:#9ca9c2;
+margin-top:5px;
+font-size:13px
+}
+
+/* BATCH PANEL */
+
+.batch-panel{
+max-width:1100px;
+margin:20px auto;
+padding:70px 7%;
+display:none
+}
+
+.batch-panel.show{
+display:block
+}
+
+.batch-buttons{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px
+}
+
+.batch-btn{
+padding:18px;
+border-radius:15px;
+border:1px solid rgba(0,229,255,.2);
+color:white;
+background:rgba(255,255,255,.05);
+cursor:pointer;
+transition:.3s
+}
+
+.batch-btn:hover,
+.batch-btn.active{
+transform:translateY(-4px);
+border-color:#00e5ff;
+background:rgba(0,229,255,.08);
+box-shadow:0 0 25px rgba(0,229,255,.1)
+}
+
+.student-list{
+display:none;
+margin-top:25px;
+padding:22px;
+border:1px solid var(--border);
+border-radius:20px;
+background:rgba(255,255,255,.04)
+}
+
+.student-list.show{
+display:block
+}
+
+.student-list-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:18px
+}
+
+.table-wrap{
+overflow-x:auto
+}
+
+.student-table{
+width:100%;
+border-collapse:collapse;
+min-width:650px
+}
+
+.student-table th,
+.student-table td{
+padding:13px;
+text-align:left;
+border-bottom:1px solid rgba(255,255,255,.08);
+font-size:12px
+}
+
+.student-table th{
+color:#00e5ff;
+font-size:11px;
+letter-spacing:1px
+}
+
+.student-table td{
+color:#c8d1e3
+}
+
+.student-table tr:hover td{
+background:rgba(0,229,255,.03)
+}
+
+/* COURSE */
+
 .card-grid{
- display:grid;grid-template-columns:repeat(3,1fr);gap:22px
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px
 }
+
 .card{
- position:relative;padding:28px;border-radius:24px;
- background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
- border:1px solid var(--border);
- backdrop-filter:blur(15px);
- overflow:hidden;transition:.45s
+position:relative;
+padding:28px;
+border-radius:24px;
+background:linear-gradient(
+145deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.025)
+);
+border:1px solid var(--border);
+backdrop-filter:blur(15px);
+overflow:hidden;
+transition:.45s
 }
+
 .card:hover{
- transform:translateY(-10px);
- border-color:rgba(0,229,255,.4);
- box-shadow:0 25px 60px rgba(0,0,0,.3)
+transform:translateY(-10px);
+border-color:rgba(0,229,255,.4);
+box-shadow:0 25px 60px rgba(0,0,0,.3)
 }
+
 .icon{
- width:58px;height:58px;display:flex;
- align-items:center;justify-content:center;
- border-radius:17px;font-size:28px;
- background:linear-gradient(135deg,rgba(33,150,243,.2),rgba(139,92,246,.2))
+width:58px;
+height:58px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:17px;
+font-size:28px;
+background:linear-gradient(
+135deg,
+rgba(33,150,243,.2),
+rgba(139,92,246,.2)
+)
 }
-.card h3{margin-top:20px;font-size:20px}
+
+.card h3{
+margin-top:20px;
+font-size:20px
+}
+
 .card p{
- margin-top:10px;color:#a5b0c9;line-height:1.7;font-size:14px
+margin-top:10px;
+color:#a5b0c9;
+line-height:1.7;
+font-size:14px
 }
 
 /* LAB */
+
 .lab{
- display:grid;grid-template-columns:1fr 1fr;
- gap:35px;align-items:center
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+align-items:center
 }
+
 .lab-visual{
- min-height:380px;border-radius:30px;
- display:flex;align-items:center;justify-content:center;
- background:rgba(255,255,255,.04);
- border:1px solid var(--border);overflow:hidden
+min-height:380px;
+border-radius:30px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+overflow:hidden
 }
+
 .monitor{
- width:220px;height:145px;border:5px solid #aebbd4;
- border-radius:12px;position:relative;
- box-shadow:0 0 50px rgba(0,229,255,.2);
- animation:monitorFloat 3s infinite
+width:220px;
+height:145px;
+border:5px solid #aebbd4;
+border-radius:12px;
+position:relative;
+box-shadow:0 0 50px rgba(0,229,255,.2);
+animation:monitorFloat 3s infinite
 }
+
 .monitor-screen{
- position:absolute;inset:12px;
- display:flex;align-items:center;justify-content:center;
- text-align:center;background:#07132e;color:#00e5ff;
- font-weight:bold;font-size:11px;letter-spacing:2px
+position:absolute;
+inset:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:#07132e;
+color:#00e5ff;
+font-weight:bold;
+font-size:11px;
+letter-spacing:2px
 }
+
 .monitor-stand{
- position:absolute;bottom:-35px;left:50%;width:60px;height:30px;
- transform:translateX(-50%);border-bottom:5px solid #aebbd4
+position:absolute;
+bottom:-35px;
+left:50%;
+width:60px;
+height:30px;
+transform:translateX(-50%);
+border-bottom:5px solid #aebbd4
 }
-@keyframes monitorFloat{50%{transform:translateY(-10px)}}
-.lab-content h2{font-size:42px}
+
+@keyframes monitorFloat{
+50%{transform:translateY(-10px)}
+}
+
+.lab-content h2{
+font-size:42px
+}
+
 .lab-content p{
- margin-top:18px;color:#aab5cf;line-height:1.8
+margin-top:18px;
+color:#aab5cf;
+line-height:1.8
 }
-.lab-list{margin-top:25px;display:grid;gap:11px}
+
+.lab-list{
+margin-top:25px;
+display:grid;
+gap:11px
+}
+
 .lab-list div{
- padding:14px;border-radius:13px;
- background:rgba(255,255,255,.05);
- border:1px solid rgba(255,255,255,.07)
+padding:14px;
+border-radius:13px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.07)
 }
 
 /* GALLERY */
+
 .gallery{
- display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px
 }
+
 .gallery-item{
- position:relative;height:240px;border-radius:22px;
- overflow:hidden;border:1px solid var(--border);
- background:#0a1124;cursor:pointer
+position:relative;
+height:240px;
+border-radius:22px;
+overflow:hidden;
+border:1px solid var(--border);
+background:#0a1124;
+cursor:pointer
 }
+
 .gallery-item img{
- width:100%;height:100%;object-fit:cover;
- display:block;transition:.5s
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.5s
 }
-.gallery-item:hover img{transform:scale(1.08)}
+
+.gallery-item:hover img{
+transform:scale(1.08)
+}
+
 .gallery-item:after{
- content:"VIEW PHOTO ↗";position:absolute;left:15px;bottom:14px;
- padding:7px 10px;border-radius:9px;
- background:rgba(3,7,17,.75);color:#00e5ff;
- font-size:10px;font-weight:bold;letter-spacing:1px;
- opacity:0;transition:.3s
+content:"VIEW PHOTO ↗";
+position:absolute;
+left:15px;
+bottom:14px;
+padding:7px 10px;
+border-radius:9px;
+background:rgba(3,7,17,.75);
+color:#00e5ff;
+font-size:10px;
+font-weight:bold;
+letter-spacing:1px;
+opacity:0;
+transition:.3s
 }
-.gallery-item:hover:after{opacity:1}
-.lightbox{
- display:none;position:fixed;inset:0;
- background:rgba(0,0,0,.92);z-index:5000;
- align-items:center;justify-content:center;padding:25px
-}
-.lightbox.show{display:flex}
-.lightbox img{
- max-width:95%;max-height:90%;object-fit:contain;border-radius:15px
-}
-.close{
- position:absolute;right:25px;top:20px;
- font-size:35px;cursor:pointer;color:#fff
+
+.gallery-item:hover:after{
+opacity:1
 }
 
 /* TRAINERS */
-.trainer{text-align:center}
-.avatar{
- width:90px;height:90px;margin:auto;border-radius:50%;
- display:flex;align-items:center;justify-content:center;
- font-size:32px;font-weight:bold;
- background:linear-gradient(135deg,#2196f3,#8b5cf6);
- box-shadow:0 0 35px rgba(33,150,243,.25)
-}
-.trainer h3{margin-top:18px}
-.trainer p{color:#9ca9c2;margin-top:7px}
 
-/* STUDENT BATCH PANEL */
-.batch-panel{
- display:none;max-width:1050px;margin:30px auto 0;
- padding:28px;border-radius:25px;
- background:rgba(255,255,255,.055);
- border:1px solid var(--border);
- backdrop-filter:blur(20px)
-}
-.batch-panel.show{display:block;animation:idAppear .5s ease}
-.batch-buttons{
- display:grid;grid-template-columns:repeat(3,1fr);gap:14px
-}
-.batch-btn{
- padding:18px;border:1px solid rgba(0,229,255,.18);
- background:rgba(0,229,255,.05);color:#fff;
- border-radius:15px;cursor:pointer;font-weight:800;
- transition:.3s
-}
-.batch-btn:hover{
- transform:translateY(-4px);
- border-color:#00e5ff;
- box-shadow:0 10px 30px rgba(0,229,255,.12)
+.trainer{
+text-align:center
 }
 
-/* STUDENT LIST */
-.student-list{
- display:none;margin-top:25px;
- border-radius:20px;overflow:hidden;
- border:1px solid rgba(255,255,255,.12)
+.trainer-photo{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid rgba(0,229,255,.5);
+box-shadow:0 0 30px rgba(0,229,255,.18)
 }
-.student-list.show{display:block}
-.list-head{
- padding:17px 20px;
- background:linear-gradient(135deg,rgba(33,150,243,.18),rgba(139,92,246,.18));
- display:flex;justify-content:space-between;align-items:center;
- gap:10px;flex-wrap:wrap
+
+.trainer p{
+color:#00e5ff;
+font-size:11px;
+font-weight:bold;
+letter-spacing:3px
 }
-.list-head strong{font-size:17px}
-.table-wrap{overflow-x:auto}
-.student-table{
- width:100%;border-collapse:collapse;
- min-width:650px;background:rgba(0,0,0,.12)
-}
-.student-table th,.student-table td{
- padding:13px 15px;text-align:left;
- border-bottom:1px solid rgba(255,255,255,.08);
- font-size:13px
-}
-.student-table th{
- color:#00e5ff;background:rgba(0,229,255,.05);
- font-size:11px;letter-spacing:1px
-}
-.student-table td{color:#dce5f5}
-.student-table tr:hover td{background:rgba(255,255,255,.035)}
-.list-back{
- margin-top:15px;
+
+.batches{
+margin-top:15px;
+padding:9px;
+border-radius:10px;
+background:rgba(0,229,255,.06);
+color:#b8c6df;
+font-size:12px
 }
 
 /* PORTAL */
+
 .portal{
- max-width:920px;margin:auto;padding:35px;
- border-radius:30px;background:rgba(255,255,255,.055);
- border:1px solid var(--border);backdrop-filter:blur(20px)
-}
-.form-grid{
- display:grid;grid-template-columns:repeat(2,1fr);gap:18px
-}
-.input label{
- display:block;margin-bottom:8px;color:#aab5cc;font-size:13px
-}
-.input input{
- width:100%;padding:15px;border-radius:12px;
- outline:none;color:white;background:rgba(0,0,0,.25);
- border:1px solid rgba(255,255,255,.12)
-}
-.input input:focus{
- border-color:#00e5ff;
- box-shadow:0 0 20px rgba(0,229,255,.1)
-}
-.verify{width:100%;margin-top:20px}
-.search-note{
- margin-top:12px;text-align:center;color:#71809d;font-size:11px
+max-width:950px;
+margin:auto;
+padding:35px;
+border-radius:28px;
+background:rgba(255,255,255,.045);
+border:1px solid var(--border);
+backdrop-filter:blur(18px)
 }
 
-/* DIGITAL ID */
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px
+}
+
+.input label{
+display:block;
+color:#aab5cf;
+font-size:12px;
+margin-bottom:8px
+}
+
+.input input{
+width:100%;
+padding:15px 16px;
+border-radius:13px;
+outline:none;
+color:white;
+background:rgba(0,0,0,.25);
+border:1px solid rgba(255,255,255,.12)
+}
+
+.input input:focus{
+border-color:#00e5ff;
+box-shadow:0 0 20px rgba(0,229,255,.1)
+}
+
+.verify{
+margin-top:20px
+}
+
+.search-note{
+margin-top:12px;
+color:#7f8ba5;
+font-size:11px
+}
+
+/* ID CARD */
+
 .id-card{
- display:none;max-width:560px;margin:40px auto 0;
- border-radius:22px;overflow:hidden;background:#fff;color:#102b6f;
- border:5px solid #123a91;
- box-shadow:0 25px 80px rgba(0,0,0,.45);
- animation:idAppear .7s ease;position:relative
+display:none;
+max-width:500px;
+margin:35px auto 0;
+padding:28px;
+border-radius:25px;
+background:
+linear-gradient(
+145deg,
+rgba(33,150,243,.13),
+rgba(139,92,246,.10)
+),
+#071021;
+border:1px solid rgba(0,229,255,.3);
+box-shadow:0 0 60px rgba(0,229,255,.12);
+overflow:hidden;
+position:relative
 }
-.id-card:before{
- content:"";position:absolute;inset:6px;
- border:2px solid #123a91;border-radius:15px;
- pointer-events:none;z-index:4
-}
-.id-top-pattern{
- height:72px;background:linear-gradient(135deg,#eaf1ff,#fff 58%,#eef4ff);
- position:relative;overflow:hidden
-}
-.id-top-pattern:before{
- content:"";position:absolute;left:-30px;top:-45px;
- width:220px;height:150px;
- background:linear-gradient(135deg,#123a91 0 38%,#2f63c7 38% 62%,transparent 62%);
- transform:skewX(-18deg)
-}
-.id-dots{
- position:absolute;right:18px;top:10px;width:130px;height:60px;
- background-image:radial-gradient(#4c73b9 2px,transparent 3px);
- background-size:18px 18px;opacity:.65
-}
+
 .id-brand{
- position:relative;text-align:center;padding:12px 15px 2px;color:#0c2c70
+text-align:center
 }
+
 .id-brand .project{
- font-size:24px;font-weight:900;letter-spacing:1px
+font-size:22px;
+font-weight:900;
+letter-spacing:2px
 }
+
 .id-brand .mitra{
- font-size:14px;letter-spacing:2px;margin-top:2px
+margin-top:4px;
+color:#00e5ff;
+letter-spacing:4px;
+font-size:11px
 }
+
 .id-line{
- width:110px;height:3px;background:#173e91;
- margin:6px auto 0;border-radius:5px;position:relative
+height:1px;
+margin:17px 0;
+background:linear-gradient(
+90deg,
+transparent,
+#00e5ff,
+transparent
+)
 }
-.id-line:after{
- content:"";position:absolute;width:9px;height:9px;
- border-radius:50%;background:#173e91;
- left:50%;top:50%;transform:translate(-50%,-50%)
-}
+
 .id-device{
- font-size:48px;text-align:center;line-height:1;margin:4px 0 0
+text-align:center;
+font-size:28px
 }
+
 .id-lab-title{
- text-align:center;font-family:Georgia,serif;
- font-size:35px;font-weight:900;letter-spacing:1px;color:#0c3380
+text-align:center;
+margin-top:7px;
+font-size:12px;
+color:#9fb0cd;
+letter-spacing:3px
 }
+
 .id-subtitle{
- margin:7px 24px 0;padding:10px 15px;
- background:#173f96;color:#fff;text-align:center;
- font-weight:900;letter-spacing:1px;font-size:15px;
- clip-path:polygon(0 0,100% 0,94% 50%,100% 100%,0 100%,6% 50%)
+text-align:center;
+margin-top:14px;
+color:#00e5ff;
+font-size:10px;
+letter-spacing:2px
 }
+
 .id-role{
- text-align:center;margin:10px 28px 8px;padding:9px 16px;
- border-radius:10px;background:#1e4aa4;color:#fff;
- font-size:17px;font-weight:900;letter-spacing:1px;
- box-shadow:0 5px 12px rgba(18,58,145,.2)
+width:max-content;
+margin:15px auto;
+padding:7px 13px;
+border-radius:50px;
+background:rgba(34,197,94,.12);
+color:#6ee7a0;
+border:1px solid rgba(34,197,94,.25);
+font-size:10px;
+font-weight:bold;
+letter-spacing:1px
 }
-.id-role:before,.id-role:after{
- content:"★";margin:0 18px;color:#173f96;font-size:19px
-}
+
 .id-info{
- margin:8px 28px 0;border:2px solid #9cb2da;
- border-radius:18px;padding:8px 20px;background:#fff
+display:grid;
+gap:9px
 }
+
 .id-row{
- display:grid;grid-template-columns:34px 1fr 16px 1.35fr;
- align-items:center;gap:7px;min-height:48px;
- border-bottom:1px dashed #9db1d4;font-size:15px
+display:grid;
+grid-template-columns:28px 115px 15px 1fr;
+align-items:center;
+min-height:35px;
+padding:7px 9px;
+border-radius:10px;
+background:rgba(255,255,255,.045)
 }
-.id-row:last-child{border-bottom:0}
-.id-icon{font-size:21px;text-align:center}
-.id-label{font-weight:800;color:#163d8f}
-.id-colon{font-weight:900}
-.id-value{font-weight:700;color:#111;word-break:break-word}
-.active{color:#15803d;font-weight:900}
-.id-signs{
- margin:18px 28px 0;border:2px solid #9cb2da;
- border-radius:15px;display:grid;grid-template-columns:1fr 1fr;
- overflow:hidden
+
+.id-icon{
+font-size:14px
 }
-.id-sign{
- padding:25px 12px 8px;text-align:center;font-size:9px;
- font-weight:900;letter-spacing:.5px;color:#173f96
+
+.id-label{
+color:#91a0ba;
+font-size:11px
 }
-.id-sign:after{
- content:"";display:block;border-bottom:2px solid #222;
- margin:15px auto 0;width:80%
+
+.id-colon{
+color:#52617d
 }
-.id-sign:first-child{border-right:1px solid #9cb2da}
+
+.id-value{
+color:#f3f7ff;
+font-size:12px;
+font-weight:bold;
+word-break:break-word
+}
+
+.active{
+color:#4ade80
+}
+
+.trainer-sign-box{
+margin-top:22px;
+padding-top:15px;
+border-top:1px dashed rgba(255,255,255,.15);
+text-align:right
+}
+
+.trainer-sign-label{
+color:#8290aa;
+font-size:10px;
+margin-bottom:5px
+}
+
+.trainer-sign-box img{
+width:150px;
+height:50px;
+object-fit:contain
+}
+
 .id-footer{
- margin-top:8px;padding:9px 18px 15px;text-align:center;
- background:linear-gradient(135deg,#f4f7ff,#fff);
- font-family:Georgia,serif;letter-spacing:2px;
- font-size:11px;font-weight:900;color:#173f96
+margin-top:18px;
+padding-top:14px;
+border-top:1px solid rgba(255,255,255,.1);
+text-align:center;
+color:#00e5ff;
+font-size:10px;
+letter-spacing:2px
 }
+
 .id-footer small{
- display:block;letter-spacing:.5px;font-style:italic;margin-top:5px
+display:block;
+margin-top:7px;
+color:#77849d;
+letter-spacing:0
 }
-.id-card .print{
- width:calc(100% - 56px);margin:15px 28px 25px
-}
-@keyframes idAppear{
- from{opacity:0;transform:scale(.88) translateY(20px)}
- to{opacity:1;transform:scale(1) translateY(0)}
+
+.print{
+margin-top:18px;
+width:100%
 }
 
 /* NOTICE */
+
 .notices{
- max-width:850px;margin:auto;display:grid;gap:13px
+max-width:900px;
+margin:auto;
+display:grid;
+gap:14px
 }
+
 .notice{
- display:flex;align-items:center;gap:15px;padding:18px;
- border-radius:16px;background:rgba(255,255,255,.05);
- border:1px solid rgba(255,255,255,.08);transition:.3s
+display:flex;
+gap:15px;
+align-items:center;
+padding:20px;
+border-radius:18px;
+background:rgba(255,255,255,.045);
+border:1px solid var(--border)
 }
-.notice:hover{
- transform:translateX(8px);
- border-color:rgba(0,229,255,.3)
-}
+
 .notice-tag{
- min-width:60px;text-align:center;padding:8px;
- border-radius:10px;background:rgba(0,229,255,.1);
- color:#00e5ff;font-size:10px;font-weight:bold
+min-width:55px;
+padding:7px;
+text-align:center;
+border-radius:8px;
+color:#00e5ff;
+background:rgba(0,229,255,.08);
+font-size:10px;
+font-weight:bold
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+inset:0;
+z-index:99998;
+display:none;
+align-items:center;
+justify-content:center;
+padding:25px;
+background:rgba(0,0,0,.9);
+backdrop-filter:blur(10px)
+}
+
+.lightbox.show{
+display:flex
+}
+
+.lightbox img{
+max-width:95%;
+max-height:88vh;
+border-radius:18px;
+border:1px solid rgba(0,229,255,.3);
+box-shadow:0 0 50px rgba(0,229,255,.15)
+}
+
+.close{
+position:absolute;
+top:20px;
+right:28px;
+font-size:40px;
+color:white;
+cursor:pointer
 }
 
 /* FOOTER */
+
 footer{
- padding:65px 7% 25px;text-align:center;
- border-top:1px solid rgba(255,255,255,.08);
- background:rgba(0,0,0,.18)
-}
-.footer-title{font-size:26px;font-weight:900}
-.footer-sub{
- color:#00e5ff;margin-top:7px;letter-spacing:2px;font-size:11px
-}
-.created{
- margin-top:25px;color:#b5bfd3;font-size:14px
-}
-.created strong{color:white}
-.social-info{
- margin-top:13px;display:flex;justify-content:center;
- gap:22px;flex-wrap:wrap;font-size:13px
-}
-.social-info span{color:#b5bfd3}
-.social-info strong{color:#00e5ff}
-.copyright{
- margin-top:30px;padding-top:20px;
- border-top:1px solid rgba(255,255,255,.07);
- color:#69758e;font-size:11px;line-height:1.8
+padding:70px 7% 35px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+background:rgba(0,0,0,.2)
 }
 
-/* TOP */
+.footer-title{
+font-size:25px;
+font-weight:900;
+letter-spacing:3px
+}
+
+.footer-sub{
+margin-top:5px;
+color:#00e5ff;
+letter-spacing:4px;
+font-size:10px
+}
+
+.created{
+margin-top:20px;
+color:#8e9ab2;
+font-size:13px
+}
+
+.created strong{
+color:white
+}
+
+.social-row{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+gap:18px;
+margin-top:20px
+}
+
+.social-link{
+display:flex;
+align-items:center;
+gap:8px;
+color:#c9d3e7;
+text-decoration:none;
+font-size:12px;
+transition:.3s
+}
+
+.social-link:hover{
+color:#00e5ff;
+transform:translateY(-2px)
+}
+
+.social-link svg{
+width:20px;
+height:20px;
+fill:currentColor
+}
+
+.copyright{
+margin-top:18px;
+color:#65728b;
+font-size:10px
+}
+
 #top{
- position:fixed;right:20px;bottom:20px;
- width:45px;height:45px;border-radius:50%;
- border:1px solid rgba(255,255,255,.15);
- background:rgba(10,16,38,.85);color:white;
- cursor:pointer;opacity:0;visibility:hidden;
- transition:.3s;z-index:900
+position:fixed;
+right:20px;
+bottom:20px;
+width:45px;
+height:45px;
+border:1px solid rgba(0,229,255,.3);
+border-radius:50%;
+color:#00e5ff;
+background:rgba(3,7,17,.8);
+cursor:pointer;
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:100
 }
-#top.show{opacity:1;visibility:visible}
+
+#top.show{
+opacity:1;
+visibility:visible
+}
+
 .reveal{
- opacity:0;transform:translateY(45px);transition:1s ease
+opacity:0;
+transform:translateY(30px);
+transition:.8s
 }
-.reveal.show{opacity:1;transform:translateY(0)}
+
+.reveal.visible{
+opacity:1;
+transform:translateY(0)
+}
 
 /* MOBILE */
-@media(max-width:900px){
- .nav-links{
-  display:none;position:absolute;top:70px;left:0;width:100%;
-  padding:20px;flex-direction:column;
-  background:rgba(5,8,22,.97)
- }
- .nav-links.active{display:flex}
- .menu{display:block}
- .hero{
-  flex-direction:column;text-align:center;padding-top:130px
- }
- .hero p{margin-left:auto;margin-right:auto}
- .buttons{justify-content:center}
- .hero-visual{width:300px;height:300px}
- .stats-grid{grid-template-columns:repeat(2,1fr)}
- .card-grid{grid-template-columns:1fr}
- .lab{grid-template-columns:1fr}
- .gallery{grid-template-columns:repeat(2,1fr)}
- .form-grid{grid-template-columns:1fr}
- .batch-buttons{grid-template-columns:repeat(2,1fr)}
+
+@media(max-width:850px){
+
+.nav-links{
+position:absolute;
+top:72px;
+left:0;
+width:100%;
+padding:20px 7%;
+display:none;
+flex-direction:column;
+background:rgba(3,7,17,.96);
+border-bottom:1px solid rgba(255,255,255,.1)
 }
+
+.nav-links.show{
+display:flex
+}
+
+.menu{
+display:block
+}
+
+.hero{
+padding-top:130px;
+flex-direction:column;
+text-align:center
+}
+
+.hero p{
+margin-left:auto;
+margin-right:auto
+}
+
+.buttons{
+justify-content:center
+}
+
+.hero-visual{
+width:300px;
+height:300px
+}
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr)
+}
+
+.card-grid{
+grid-template-columns:1fr
+}
+
+.lab{
+grid-template-columns:1fr
+}
+
+.gallery{
+grid-template-columns:1fr
+}
+
+.batch-buttons{
+grid-template-columns:1fr 1fr
+}
+
+.form-grid{
+grid-template-columns:1fr
+}
+
+.portal{
+padding:22px
+}
+}
+
 @media(max-width:500px){
- section{padding:75px 5%}
- .hero{padding-left:5%;padding-right:5%}
- .hero h1{font-size:52px}
- .stats-grid{gap:10px}
- .stat{padding:20px 8px}
- .number{font-size:30px}
- .portal{padding:20px}
- .lab-visual{min-height:300px}
- .gallery{grid-template-columns:1fr}
- .gallery-item{height:230px}
- .batch-panel{padding:18px}
- .batch-buttons{grid-template-columns:1fr}
- .id-card{max-width:100%;border-width:3px}
- .id-brand .project{font-size:20px}
- .id-lab-title{font-size:27px}
- .id-subtitle{margin-left:18px;margin-right:18px;font-size:12px}
- .id-role{font-size:14px;margin-left:18px;margin-right:18px}
- .id-role:before,.id-role:after{margin:0 7px}
- .id-info{margin-left:18px;margin-right:18px;padding:6px 10px}
- .id-row{
-  grid-template-columns:27px 1fr 10px 1.2fr;
-  gap:5px;font-size:12px;min-height:42px
- }
- .id-signs{margin-left:18px;margin-right:18px}
- .id-card .print{
-  width:calc(100% - 36px);
-  margin-left:18px;margin-right:18px
- }
- .notice{align-items:flex-start}
- .social-info{flex-direction:column;gap:8px}
+
+section{
+padding:75px 5%
+}
+
+.hero h1{
+font-size:52px
+}
+
+.hero h2{
+font-size:24px
+}
+
+.batch-buttons{
+grid-template-columns:1fr
+}
+
+.id-row{
+grid-template-columns:25px 95px 12px 1fr
+}
+
+.social-row{
+flex-direction:column
+}
 }
 
 /* PRINT */
+
 @media print{
- body{background:#fff!important}
- .background,.particles,nav,#loader,footer,#top,
- body>section:not(#portal),
- .portal>.section-title,.portal>.form-grid,
- .portal>.verify,.search-note,
- .batch-panel{display:none!important}
- .portal{
-  padding:0;border:0;background:none;box-shadow:none
- }
- .id-card{
-  display:block!important;position:absolute;
-  top:0;left:50%;transform:translateX(-50%);
-  width:560px;max-width:95vw;
-  box-shadow:none;margin:0
- }
- .id-card .print{display:none!important}
+
+body *{
+visibility:hidden
+}
+
+#idCard,
+#idCard *{
+visibility:visible
+}
+
+#idCard{
+position:absolute;
+left:0;
+top:0;
+width:100%;
+max-width:500px;
+box-shadow:none
+}
+
+.print{
+display:none
+}
 }
 </style>
 </head>
@@ -713,1016 +1398,1376 @@ footer{
 <body>
 
 <!-- LOADER -->
+
 <div id="loader">
- <div class="loader-title">PROJECT PRAVEEN</div>
- <div class="loader-sub">DIGITAL MITRA</div>
- <div class="loader-bar"><span></span></div>
+<div class="loader-title">PROJECT PRAVEEN</div>
+<div class="loader-sub">DIGITAL MITRA</div>
+<div class="loader-bar"><span></span></div>
 </div>
 
 <!-- BACKGROUND -->
+
 <div class="background">
- <div class="grid-bg"></div>
- <div class="scan"></div>
- <div class="circuit c1"></div>
- <div class="circuit c2"></div>
- <div class="circuit c3"></div>
- <div class="node n1"></div>
- <div class="node n2"></div>
- <div class="node n3"></div>
- <div class="glow one"></div>
- <div class="glow two"></div>
- <div class="glow three"></div>
+<div class="grid-bg"></div>
+<div class="scan"></div>
+<div class="circuit c1"></div>
+<div class="circuit c2"></div>
+<div class="circuit c3"></div>
+<div class="node n1"></div>
+<div class="node n2"></div>
+<div class="node n3"></div>
+<div class="glow one"></div>
+<div class="glow two"></div>
+<div class="glow three"></div>
 </div>
 
 <div class="particles" id="particles"></div>
 
 <!-- NAV -->
+
 <nav>
- <div class="logo">
-  <div class="logo-box">PP</div>
-  <div class="logo-text">
-   PROJECT PRAVEEN
-   <small>DIGITAL MITRA</small>
-  </div>
- </div>
 
- <div class="menu" onclick="toggleMenu()">☰</div>
+<div class="logo">
+<div class="logo-box">P²</div>
 
- <div class="nav-links" id="navLinks">
-  <a href="#home">Home</a>
-  <a href="#course">Course</a>
-  <a href="#lab">Lab</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#trainers">Trainers</a>
-  <a href="#portal">Student Portal</a>
-  <a href="#notice">Notice</a>
- </div>
+<div class="logo-text">
+PROJECT PRAVEEN
+<small>DIGITAL MITRA</small>
+</div>
+</div>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
+<a href="#home">Home</a>
+<a href="#course">Courses</a>
+<a href="#lab">Lab</a>
+<a href="#gallery">Gallery</a>
+<a href="#trainers">Trainers</a>
+<a href="#portal">Student Portal</a>
+<a href="#notice">Notice</a>
+</div>
+
 </nav>
 
 <!-- HERO -->
+
 <section class="hero" id="home">
- <div class="hero-content">
-  <div class="badge">✦ DIGITAL LEARNING INITIATIVE</div>
 
-  <h1>PROJECT <span class="gradient">PRAVEEN</span></h1>
+<div class="hero-content">
 
-  <h2>Digital Mitra</h2>
+<span class="badge">
+PROJECT PRAVEEN • DIGITAL MITRA
+</span>
 
-  <p>
-   Learn digital skills, practice technology, build confidence
-   and create a smarter future.
-  </p>
+<h1>
+<span class="gradient">PROJECT</span><br>
+PRAVEEN
+</h1>
 
-  <div class="buttons">
-   <a href="#portal" class="btn btn-primary">🔎 Find My ID</a>
-   <a href="#course" class="btn btn-secondary">Explore Course →</a>
-  </div>
- </div>
+<h2>DIGITAL MITRA</h2>
 
- <div class="hero-visual">
-  <div class="orbit one"></div>
-  <div class="orbit two"></div>
-  <div class="orbit three"></div>
-  <div class="orb">
-   <div class="orb-icon">💻</div>
-   <strong>DIGITAL MITRA</strong>
-  </div>
- </div>
+<p>
+Learn. Practice. Create.
+A practical digital learning journey where students
+develop computer knowledge, digital skills, AI awareness,
+communication and confidence.
+</p>
+
+<div class="buttons">
+<a href="#course" class="btn btn-primary">
+Explore Course
+</a>
+
+<a href="#portal" class="btn btn-secondary">
+Find My Digital ID
+</a>
+</div>
+
+</div>
+
+<div class="hero-visual">
+
+<div class="orbit one"></div>
+<div class="orbit two"></div>
+<div class="orbit three"></div>
+
+<div class="orb">
+<div class="orb-icon">💻</div>
+<strong>DIGITAL MITRA</strong>
+</div>
+
+</div>
+
 </section>
 
 <!-- STATS -->
+
 <section class="stats">
- <div class="stats-grid">
 
-  <div class="stat reveal" onclick="showBatches()">
-   <div class="stat-icon">👨‍🎓</div>
-   <div class="number" data-target="201">0</div>
-   <p>Students</p>
-   <small style="display:block;color:#00e5ff;margin-top:8px">
-    TAP TO VIEW BATCHES
-   </small>
-  </div>
+<div class="stats-grid">
 
-  <div class="stat reveal">
-   <div class="stat-icon">💻</div>
-   <div class="number" data-target="35">0</div>
-   <p>Computers</p>
-  </div>
+<div class="stat reveal" onclick="toggleBatches()">
+<div class="stat-icon">👨‍🎓</div>
+<div class="number" data-target="201">0</div>
+<p>Students • Tap to View Batches</p>
+</div>
 
-  <div class="stat reveal">
-   <div class="stat-icon">👨‍🏫</div>
-   <div class="number" data-target="3">0</div>
-   <p>Trainers</p>
-  </div>
+<div class="stat reveal">
+<div class="stat-icon">💻</div>
+<div class="number" data-target="35">0</div>
+<p>Computers</p>
+</div>
 
-  <div class="stat reveal">
-   <div class="stat-icon">🚀</div>
-   <div class="number" data-target="1">0</div>
-   <p>Digital Mission</p>
-  </div>
+<div class="stat reveal">
+<div class="stat-icon">👨‍🏫</div>
+<div class="number" data-target="3">0</div>
+<p>Trainers</p>
+</div>
 
- </div>
+<div class="stat reveal">
+<div class="stat-icon">🚀</div>
+<div class="number" data-target="1">0</div>
+<p>Digital Mission</p>
+</div>
 
- <!-- BATCH PANEL -->
- <div class="batch-panel" id="batchPanel">
-  <div class="section-title" style="margin-bottom:30px">
-   <div class="tag">STUDENT DIRECTORY</div>
-   <h2>Select Your Batch</h2>
-   <p>Choose a batch to view its student list.</p>
-  </div>
+</div>
 
-  <div class="batch-buttons">
-   <button class="batch-btn" onclick="showBatch('122')">🎓 Batch (122)</button>
-   <button class="batch-btn" onclick="showBatch('123')">🎓 Batch (123)</button>
-   <button class="batch-btn" onclick="showBatch('124')">🎓 Batch (124)</button>
-   <button class="batch-btn" onclick="showBatch('128')">🎓 Batch (128)</button>
-   <button class="batch-btn" onclick="showBatch('136')">🎓 Batch (136)</button>
-   <button class="batch-btn" onclick="showBatch('137')">🎓 Batch (137)</button>
-  </div>
-
-  <div class="student-list" id="studentList">
-   <div class="list-head">
-    <strong id="listTitle">Batch</strong>
-    <span id="listCount" style="color:#00e5ff"></span>
-   </div>
-
-   <div class="table-wrap">
-    <table class="student-table">
-     <thead>
-      <tr>
-       <th>S.NO.</th>
-       <th>STUDENT NAME</th>
-       <th>FATHER'S NAME</th>
-       <th>BATCH</th>
-       <th>ID NUMBER</th>
-      </tr>
-     </thead>
-     <tbody id="studentTableBody"></tbody>
-    </table>
-   </div>
-
-   <button class="btn btn-secondary list-back" onclick="hideStudentList()">
-    ← Back to Batches
-   </button>
-  </div>
- </div>
 </section>
 
+<!-- BATCHES -->
+
+<div class="batch-panel" id="batchPanel">
+
+<div class="section-title">
+<div class="tag">STUDENT DIRECTORY</div>
+<h2>Select Batch</h2>
+<p>Choose a batch to view its registered students.</p>
+</div>
+
+<div class="batch-buttons">
+
+<button class="batch-btn" onclick="showBatch(122,this)">
+Batch 122
+</button>
+
+<button class="batch-btn" onclick="showBatch(123,this)">
+Batch 123
+</button>
+
+<button class="batch-btn" onclick="showBatch(124,this)">
+Batch 124
+</button>
+
+<button class="batch-btn" onclick="showBatch(128,this)">
+Batch 128
+</button>
+
+<button class="batch-btn" onclick="showBatch(136,this)">
+Batch 136
+</button>
+
+<button class="batch-btn" onclick="showBatch(137,this)">
+Batch 137
+</button>
+
+</div>
+
+<div class="student-list" id="studentList">
+
+<div class="student-list-title">
+<h3 id="batchTitle">Batch</h3>
+<span id="batchCount" class="tag"></span>
+</div>
+
+<div class="table-wrap">
+
+<table class="student-table">
+
+<thead>
+<tr>
+<th>Student Name</th>
+<th>Father's Name</th>
+<th>Batch</th>
+<th>ID Number</th>
+</tr>
+</thead>
+
+<tbody id="studentTableBody"></tbody>
+
+</table>
+
+</div>
+</div>
+</div>
+
 <!-- COURSE -->
+
 <section id="course">
- <div class="section-title reveal">
-  <div class="tag">DIGITAL MITRA</div>
-  <h2>Learn Digital Skills</h2>
-  <p>Practical skills for today's digital world.</p>
- </div>
 
- <div class="card-grid">
+<div class="section-title reveal">
 
-  <div class="card reveal">
-   <div class="icon">💻</div>
-   <h3>Computer Basics</h3>
-   <p>Learn computer operation, hardware, software and everyday computer usage.</p>
-  </div>
+<div class="tag">DIGITAL MITRA</div>
 
-  <div class="card reveal">
-   <div class="icon">🌐</div>
-   <h3>Internet Skills</h3>
-   <p>Learn browsers, searching, online information and communication.</p>
-  </div>
+<h2>Learn Digital Skills</h2>
 
-  <div class="card reveal">
-   <div class="icon">📱</div>
-   <h3>Digital Skills</h3>
-   <p>Understand mobile, computer and digital services.</p>
-  </div>
+<p>
+Practical skills for today's digital world.
+</p>
 
-  <div class="card reveal">
-   <div class="icon">⌨️</div>
-   <h3>Typing & Productivity</h3>
-   <p>Improve typing, document creation and digital productivity.</p>
-  </div>
+</div>
 
-  <div class="card reveal">
-   <div class="icon">🔐</div>
-   <h3>Digital Safety</h3>
-   <p>Learn privacy awareness and responsible internet behaviour.</p>
-  </div>
+<div class="card-grid">
 
-  <div class="card reveal">
-   <div class="icon">🗣️</div>
-   <h3>Soft Skills</h3>
-   <p>Communication, confidence, teamwork and personality development.</p>
-  </div>
+<div class="card reveal">
+<div class="icon">💻</div>
+<h3>Computer Basics</h3>
+<p>
+Computer fundamentals, hardware & software,
+MS Word, MS Excel, MS PowerPoint and file management.
+</p>
+</div>
 
- </div>
+<div class="card reveal">
+<div class="icon">🌐</div>
+<h3>Internet Skills</h3>
+<p>
+Web browsing, smart searching, email,
+online information and useful internet services.
+</p>
+</div>
+
+<div class="card reveal">
+<div class="icon">🤖</div>
+<h3>AI / Prompt</h3>
+<p>
+AI basics, useful AI tools, prompt writing
+and practical ways to work smarter with AI.
+</p>
+</div>
+
+<div class="card reveal">
+<div class="icon">📱</div>
+<h3>Digital Skills</h3>
+<p>
+Mobile & computer use, digital platforms,
+online services and everyday digital tasks.
+</p>
+</div>
+
+<div class="card reveal">
+<div class="icon">⌨️</div>
+<h3>Typing & Productivity</h3>
+<p>
+Typing practice, document preparation,
+shortcuts and tools that improve productivity.
+</p>
+</div>
+
+<div class="card reveal">
+<div class="icon">🔐</div>
+<h3>Digital Safety</h3>
+<p>
+Strong passwords, privacy, phishing awareness,
+scams and responsible online behaviour.
+</p>
+</div>
+
+<div class="card reveal">
+<div class="icon">🗣️</div>
+<h3>Soft Skills</h3>
+<p>
+Communication, confidence, teamwork,
+presentation, stage speaking and personality development.
+</p>
+</div>
+
+</div>
+
 </section>
 
 <!-- LAB -->
+
 <section id="lab">
- <div class="lab">
 
-  <div class="lab-visual reveal">
-   <div class="monitor">
-    <div class="monitor-screen">
-     DIGITAL<br>MITRA
-    </div>
-    <div class="monitor-stand"></div>
-   </div>
-  </div>
+<div class="lab">
 
-  <div class="lab-content reveal">
-   <div class="tag">COMPUTER LAB</div>
-   <h2>Learn by Doing.</h2>
+<div class="lab-visual reveal">
 
-   <p>
-    A practical learning environment where students can learn
-    and practice digital technology.
-   </p>
+<div class="monitor">
 
-   <div class="lab-list">
-    <div>💻 35 Computer Systems</div>
-    <div>👨‍🎓 Practical Student Sessions</div>
-    <div>🌐 Internet & Digital Learning</div>
-    <div>📚 Practice Based Learning</div>
-   </div>
-  </div>
+<div class="monitor-screen">
+DIGITAL<br>
+MITRA
+</div>
 
- </div>
+<div class="monitor-stand"></div>
+
+</div>
+
+</div>
+
+<div class="lab-content reveal">
+
+<div class="tag">COMPUTER LAB</div>
+
+<h2>Learn by Doing.</h2>
+
+<p>
+A practical learning environment where students
+can learn and practice digital technology.
+</p>
+
+<div class="lab-list">
+
+<div>💻 35 Computer Systems</div>
+<div>👨‍🎓 Practical Student Sessions</div>
+<div>🌐 Internet & Digital Learning</div>
+<div>📚 Practice Based Learning</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- GALLERY -->
+
 <section id="gallery">
 
- <div class="section-title reveal">
-  <div class="tag">LAB GALLERY</div>
-  <h2>Inside Our Computer Lab</h2>
-  <p>Real moments from Digital Mitra practical learning sessions.</p>
- </div>
+<div class="section-title reveal">
 
- <div class="gallery">
+<div class="tag">PROJECT PRAVEEN</div>
 
-  <div class="gallery-item reveal" onclick="openPhoto(this)">
-   <img src="IMG-20260905-WA0001.jpg" alt="Digital Mitra Computer Lab">
-  </div>
+<h2>Computer Lab Gallery</h2>
 
-  <div class="gallery-item reveal" onclick="openPhoto(this)">
-   <img src="IMG-20260905-WA0005.jpg" alt="Digital Mitra Computer Lab">
-  </div>
+<p>
+Moments and activities from the Digital Mitra
+computer lab.
+</p>
 
-  <div class="gallery-item reveal" onclick="openPhoto(this)">
-   <img src="IMG-20260905-WA0006.jpg" alt="Digital Mitra Computer Lab">
-  </div>
+</div>
 
-  <div class="gallery-item reveal" onclick="openPhoto(this)">
-   <img src="IMG-20260905-WA0001.jpg" alt="Computer Lab Session">
-  </div>
+<div class="gallery">
 
-  <div class="gallery-item reveal" onclick="openPhoto(this)">
-   <img src="IMG-20260905-WA0005.jpg" alt="Digital Learning Session">
-  </div>
+<div class="gallery-item" onclick="openPhoto(this)">
+<img src="IMG-20260905-WA0001.jpg"
+alt="Project Praveen Lab Photo 1"
+loading="lazy">
+</div>
 
-  <div class="gallery-item reveal" onclick="openPhoto(this)">
-   <img src="IMG-20260905-WA0006.jpg" alt="Computer Lab">
-  </div>
+<div class="gallery-item" onclick="openPhoto(this)">
+<img src="IMG-20260905-WA0005.jpg"
+alt="Project Praveen Lab Photo 2"
+loading="lazy">
+</div>
 
- </div>
+<div class="gallery-item" onclick="openPhoto(this)">
+<img src="IMG-20260905-WA0006.jpg"
+alt="Project Praveen Lab Photo 3"
+loading="lazy">
+</div>
+
+<div class="gallery-item" onclick="openPhoto(this)">
+<img src="IMG-20260908-WA0061.jpg"
+alt="Project Praveen Lab Photo 4"
+loading="lazy">
+</div>
+
+<div class="gallery-item" onclick="openPhoto(this)">
+<img src="IMG-20260908-WA0064.jpg"
+alt="Project Praveen Lab Photo 5"
+loading="lazy">
+</div>
+
+<div class="gallery-item" onclick="openPhoto(this)">
+<img src="IMG-20260908-WA0066.jpg"
+alt="Project Praveen Lab Photo 6"
+loading="lazy">
+</div>
+
+<div class="gallery-item" onclick="openPhoto(this)">
+<img src="IMG-20260908-WA0069.jpg"
+alt="Project Praveen Lab Photo 7"
+loading="lazy">
+</div>
+
+<div class="gallery-item" onclick="openPhoto(this)">
+<img src="IMG-20260908-WA0070.jpg"
+alt="Project Praveen Lab Photo 8"
+loading="lazy">
+</div>
+
+<div class="gallery-item" onclick="openPhoto(this)">
+<img src="IMG-20260908-WA0071.jpg"
+alt="Project Praveen Lab Photo 9"
+loading="lazy">
+</div>
+
+</div>
+
 </section>
 
-<div class="lightbox" id="lightbox" onclick="closePhoto()">
- <span class="close">×</span>
- <img id="lightboxImg" src="" alt="Lab photo">
+<!-- LIGHTBOX -->
+
+<div class="lightbox"
+id="lightbox"
+onclick="closePhoto()">
+
+<span class="close">×</span>
+
+<img id="lightboxImg"
+src=""
+alt="Lab Photo">
+
 </div>
 
 <!-- TRAINERS -->
+
 <section id="trainers">
 
- <div class="section-title reveal">
-  <div class="tag">OUR TRAINERS</div>
-  <h2>Meet Our Trainers</h2>
-  <p>Guidance and practical learning support for Digital Mitra students.</p>
- </div>
+<div class="section-title reveal">
 
- <div class="card-grid">
+<div class="tag">OUR TRAINERS</div>
 
-  <div class="card trainer reveal">
-   <div class="avatar">A</div>
-   <h3>Archit Varshney</h3>
-   <p>Trainer</p>
-  </div>
+<h2>Meet Our Trainers</h2>
 
-  <div class="card trainer reveal">
-   <div class="avatar">S</div>
-   <h3>Shivansh Tripathi</h3>
-   <p>Trainer</p>
-  </div>
+<p>
+Guidance and practical learning support
+for Digital Mitra students.
+</p>
 
-  <div class="card trainer reveal">
-   <div class="avatar">J</div>
-   <h3>Jiya</h3>
-   <p>Trainer</p>
-  </div>
+</div>
 
- </div>
+<div class="card-grid">
+
+<div class="card trainer reveal">
+
+<img
+class="trainer-photo"
+src="trainer_archit.jpg"
+alt="Archit Varshney">
+
+<h3>Archit Varshney</h3>
+
+<p>TRAINER</p>
+
+<div class="batches">
+Batch 122, 128
+</div>
+
+</div>
+
+<div class="card trainer reveal">
+
+<img
+class="trainer-photo"
+src="trainer_shivansh.png"
+alt="Shivansh Kumar Tripathi">
+
+<h3>Shivansh Kumar Tripathi</h3>
+
+<p>TRAINER</p>
+
+<div class="batches">
+Batch 123, 136
+</div>
+
+</div>
+
+<div class="card trainer reveal">
+
+<img
+class="trainer-photo"
+src="trainer_jiya.png"
+alt="Jiya Aggarwal">
+
+<h3>Jiya Aggarwal</h3>
+
+<p>TRAINER</p>
+
+<div class="batches">
+Batch 124, 137
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- STUDENT PORTAL -->
+
 <section id="portal">
 
- <div class="section-title reveal">
-  <div class="tag">STUDENT PORTAL</div>
-  <h2>Find My Digital ID</h2>
-  <p>
-   Enter your registered name and father's name to view
-   the Digital Mitra Identity Card.
-  </p>
- </div>
+<div class="section-title reveal">
 
- <div class="portal reveal">
+<div class="tag">STUDENT PORTAL</div>
 
-  <div class="form-grid">
+<h2>Find My Digital ID</h2>
 
-   <div class="input">
-    <label for="studentName">Student Name</label>
-    <input
-     id="studentName"
-     type="text"
-     autocomplete="off"
-     placeholder="Enter student name">
-   </div>
+<p>
+Enter your registered name and father's name
+to view the Digital Mitra Identity Card.
+</p>
 
-   <div class="input">
-    <label for="fatherName">Father's Name</label>
-    <input
-     id="fatherName"
-     type="text"
-     autocomplete="off"
-     placeholder="Enter father's name">
-   </div>
+</div>
 
-  </div>
+<div class="portal reveal">
 
-  <button class="btn btn-primary verify" onclick="findID()">
-   🔎 VERIFY & SHOW DIGITAL ID
-  </button>
+<div class="form-grid">
 
-  <div class="search-note">
-   Search is matched with the registered student record.
-  </div>
+<div class="input">
 
-  <!-- DIGITAL ID -->
-  <div class="id-card" id="idCard">
+<label for="studentName">
+Student Name
+</label>
 
-   <div class="id-top-pattern">
-    <div class="id-dots"></div>
-   </div>
+<input
+id="studentName"
+type="text"
+autocomplete="off"
+placeholder="Enter student name">
 
-   <div class="id-brand">
-    <div class="project">PROJECT PRAVEEN</div>
-    <div class="mitra">DIGITAL MITRA</div>
-    <div class="id-line"></div>
-   </div>
+</div>
 
-   <div class="id-device">🖥️⌨️🖱️</div>
+<div class="input">
 
-   <div class="id-lab-title">COMPUTER LAB</div>
+<label for="fatherName">
+Father's Name
+</label>
 
-   <div class="id-subtitle">
-    » STUDENT IDENTITY CARD «
-   </div>
+<input
+id="fatherName"
+type="text"
+autocomplete="off"
+placeholder="Enter father's name">
 
-   <div class="id-role" id="idRole">
-    STUDENT
-   </div>
+</div>
 
-   <div class="id-info" id="details"></div>
+</div>
 
-   <div class="id-signs">
-    <div class="id-sign">STUDENT SIGN.</div>
-    <div class="id-sign">LAB INCHARGE SIGN.</div>
-   </div>
+<button
+class="btn btn-primary verify"
+onclick="findID()">
 
-   <div class="id-footer">
-    LEARN • PRACTICE • ACHIEVE
-    <small>“Discipline Today, Success Tomorrow”</small>
-   </div>
+🔎 VERIFY & SHOW DIGITAL ID
 
-   <button class="btn btn-primary print" onclick="window.print()">
-    🖨️ PRINT DIGITAL ID
-   </button>
+</button>
 
-  </div>
- </div>
+<div class="search-note">
+Search is matched with the registered student record.
+</div>
+
+<div class="id-card" id="idCard">
+
+<div class="id-brand">
+
+<div class="project">
+PROJECT PRAVEEN
+</div>
+
+<div class="mitra">
+DIGITAL MITRA
+</div>
+
+<div class="id-line"></div>
+
+</div>
+
+<div class="id-device">
+🖥️⌨️🖱️
+</div>
+
+<div class="id-lab-title">
+COMPUTER LAB
+</div>
+
+<div class="id-subtitle">
+» STUDENT IDENTITY CARD «
+</div>
+
+<div class="id-role" id="idRole">
+STUDENT
+</div>
+
+<div class="id-info" id="details"></div>
+
+<div class="trainer-sign-box">
+
+<div class="trainer-sign-label">
+Trainer Signature
+</div>
+
+<img
+id="trainerSignature"
+src=""
+alt="Trainer Signature">
+
+</div>
+
+<div class="id-footer">
+
+LEARN • PRACTICE • ACHIEVE
+
+<small>
+“Discipline Today, Success Tomorrow”
+</small>
+
+</div>
+
+<button
+class="btn btn-primary print"
+onclick="window.print()">
+
+🖨️ PRINT DIGITAL ID
+
+</button>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- NOTICE -->
+
 <section id="notice">
 
- <div class="section-title reveal">
-  <div class="tag">NOTICE BOARD</div>
-  <h2>Latest Updates</h2>
- </div>
+<div class="section-title reveal">
 
- <div class="notices">
+<div class="tag">NOTICE BOARD</div>
 
-  <div class="notice reveal">
-   <div class="notice-tag">NEW</div>
-   <div>
-    <strong>Digital Mitra Training</strong>
-    <p style="color:#8f9bb5;margin-top:5px;font-size:13px">
-     Continue your practical computer learning sessions.
-    </p>
-   </div>
-  </div>
+<h2>Latest Updates</h2>
 
-  <div class="notice reveal">
-   <div class="notice-tag">LAB</div>
-   <div>
-    <strong>Computer Lab Session</strong>
-    <p style="color:#8f9bb5;margin-top:5px;font-size:13px">
-     Maintain discipline and proper lab conduct.
-    </p>
-   </div>
-  </div>
+</div>
 
-  <div class="notice reveal">
-   <div class="notice-tag">INFO</div>
-   <div>
-    <strong>Digital Skills Mission</strong>
-    <p style="color:#8f9bb5;margin-top:5px;font-size:13px">
-     Learn • Practice • Create
-    </p>
-   </div>
-  </div>
+<div class="notices">
 
- </div>
+<div class="notice reveal">
+
+<div class="notice-tag">
+NEW
+</div>
+
+<div>
+
+<strong>
+Digital Mitra Training
+</strong>
+
+<p style="color:#8f9bb5;margin-top:5px;font-size:13px">
+Continue your practical computer learning sessions.
+</p>
+
+</div>
+
+</div>
+
+<div class="notice reveal">
+
+<div class="notice-tag">
+LAB
+</div>
+
+<div>
+
+<strong>
+Computer Lab Session
+</strong>
+
+<p style="color:#8f9bb5;margin-top:5px;font-size:13px">
+Maintain discipline and proper lab conduct.
+</p>
+
+</div>
+
+</div>
+
+<div class="notice reveal">
+
+<div class="notice-tag">
+INFO
+</div>
+
+<div>
+
+<strong>
+Digital Skills Mission
+</strong>
+
+<p style="color:#8f9bb5;margin-top:5px;font-size:13px">
+Learn • Practice • Create
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- FOOTER -->
+
 <footer>
 
- <div class="footer-title">PROJECT PRAVEEN</div>
+<div class="footer-title">
+PROJECT PRAVEEN
+</div>
 
- <div class="footer-sub">DIGITAL MITRA</div>
+<div class="footer-sub">
+DIGITAL MITRA
+</div>
 
- <div class="created">
-  Created by <strong>Banti Gupta (CR)</strong>
+<div class="created">
+Created by
+<strong>Banti Gupta (CR)</strong>
+</div>
 
-  <div class="social-info">
-   <span>
-    📸 Instagram:
-    <strong>banti.thechampion09</strong>
-   </span>
+<div class="social-row">
 
-   <span>
-    📧 Email:
-    <strong>bantigupta22334@gmail.com</strong>
-   </span>
-  </div>
- </div>
+<a
+class="social-link"
+href="https://www.instagram.com/banti.thechampion09/"
+target="_blank"
+rel="noopener">
 
- <div class="copyright">
-  © 2026 PROJECT PRAVEEN • DIGITAL MITRA
-  <br>
-  All Rights Reserved
- </div>
+<svg viewBox="0 0 24 24">
+<path d="
+M7 2h10a5 5 0 0 1 5 5v10a5
+5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5
+5 0 0 1 5-5zm0 2a3 3 0 0
+0-3 3v10a3 3 0 0 0 3 3h10a3
+3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5
+3.5A4.5 4.5 0 1 1 7.5 12 4.5
+4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1
+0 14.5 12 2.5 2.5 0 0 0 12 9.5z
+M17.75 6.25a1.25 1.25 0 1
+1-1.25 1.25 1.25 0 0 1 1.25-1.25z">
+</path>
+</svg>
+
+<span>banti.thechampion09</span>
+
+</a>
+
+<a
+class="social-link"
+href="mailto:bantigupta22334@gmail.com">
+
+<svg viewBox="0 0 24 24">
+<path d="
+M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5
+2.5 0 0 1 22 5.5v13a2.5 2.5 0 0
+1-2.5 2.5h-15A2.5 2.5 0 0
+1 2 18.5v-13zm2.5-.5a.5.5 0 0
+0-.3.9l7.5 5.8a.5.5 0 0 0
+.6 0l7.5-5.8a.5.5 0 0 0-.3-.9h-15zm15.5
+3.4-6.5 5a2.5 2.5 0 0 1-3 0l-6.5-5v10.1c0
+.3.2.5.5.5.5h15c.3 0 .5-.2.5-.5V8.4z">
+</path>
+</svg>
+
+<span>bantigupta22334@gmail.com</span>
+
+</a>
+
+</div>
+
+<div class="copyright">
+© 2026 PROJECT PRAVEEN • DIGITAL MITRA
+</div>
+
+<div class="copyright">
+All Rights Reserved
+</div>
 
 </footer>
 
-<button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
- ↑
+<button id="top"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
 </button>
 
 <script>
 
 /* LOADER */
+
 window.addEventListener("load",()=>{
- setTimeout(()=>{
-  document.getElementById("loader").classList.add("hide");
- },900);
+setTimeout(()=>{
+document.getElementById("loader").classList.add("hide")
+},900)
 });
-
-/* PARTICLES */
-const particleBox=document.getElementById("particles");
-
-for(let i=0;i<55;i++){
- const p=document.createElement("div");
- p.className="particle";
- p.style.left=Math.random()*100+"%";
- p.style.animationDuration=(5+Math.random()*10)+"s";
- p.style.animationDelay=Math.random()*8+"s";
- particleBox.appendChild(p);
-}
 
 /* MOBILE MENU */
+
 function toggleMenu(){
- document.getElementById("navLinks").classList.toggle("active");
+document.getElementById("navLinks").classList.toggle("show")
 }
 
-document.querySelectorAll(".nav-links a").forEach(a=>{
- a.addEventListener("click",()=>{
-  document.getElementById("navLinks").classList.remove("active");
- });
-});
+/* PARTICLES */
+
+const particles=document.getElementById("particles");
+
+for(let i=0;i<45;i++){
+
+const p=document.createElement("div");
+
+p.className="particle";
+
+p.style.left=Math.random()*100+"%";
+
+p.style.animationDuration=
+(5+Math.random()*10)+"s";
+
+p.style.animationDelay=
+(-Math.random()*10)+"s";
+
+particles.appendChild(p);
+
+}
 
 /* REVEAL */
-const reveals=document.querySelectorAll(".reveal");
 
-function reveal(){
- reveals.forEach(el=>{
-  if(el.getBoundingClientRect().top<window.innerHeight-80){
-   el.classList.add("show");
-  }
- });
+const observer=
+new IntersectionObserver(
+entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("visible")
 }
 
-window.addEventListener("scroll",reveal);
-reveal();
+})
+
+},
+{threshold:.12}
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
 
 /* COUNTERS */
-let countersDone=false;
 
-function counters(){
+const counters=
+document.querySelectorAll(".number");
 
- if(countersDone)return;
+const counterObserver=
+new IntersectionObserver(
+entries=>{
 
- const stats=document.querySelector(".stats");
+entries.forEach(entry=>{
 
- if(stats.getBoundingClientRect().top<window.innerHeight-100){
+if(
+entry.isIntersecting &&
+!entry.target.dataset.done
+){
 
-  countersDone=true;
+entry.target.dataset.done="1";
 
-  document.querySelectorAll(".number").forEach(counter=>{
+const target=
+Number(entry.target.dataset.target);
 
-   const target=Number(counter.dataset.target);
-   let current=0;
+let current=0;
 
-   const step=Math.max(1,Math.ceil(target/40));
+const step=
+Math.max(1,Math.ceil(target/45));
 
-   const timer=setInterval(()=>{
+const timer=setInterval(()=>{
 
-    current+=step;
+current+=step;
 
-    if(current>=target){
-     current=target;
-     clearInterval(timer);
-    }
+if(current>=target){
 
-    counter.textContent=current;
+current=target;
+clearInterval(timer);
 
-   },35);
-
-  });
- }
 }
 
-window.addEventListener("scroll",counters);
-counters();
+entry.target.textContent=current;
 
-/* =========================
-   STUDENT DATABASE
-   ========================= */
+},25);
 
-const students=[
+}
 
-/* BATCH 122 */
-["Harsh","Ghanshyam Mishra","122","2199020937"],
-["Md Samir Shah","MD SOHRAB SHAH","122","2199045249"],
-["Mohd Shahabuddin","MOHAMMAD MOEEN ANSARI","122","2199089374"],
-["Nandani Mandal","RINTU MANDAL","122","2199069832"],
-["Nisha Kumari","Mahaveer Singh","122","2199056119"],
-["Nisha Rajbhar","SHIVNATH RAJBHAR","122","2199068801"],
-["Pankaj","NEKPAL","122","2199073222"],
-["Piyush Kumar","MANOJ KUMAR","122","2199072949"],
-["Premsagar","SHRI PRAKASH","122","2199086791"],
-["Pritam Prajapati","JITENDRA PRAJAPATI","122","2199071081"],
-["Rahul Kumar","DILIP KUMAR","122","2199087272"],
-["Ravi","Ganesh Prasad","122","2199071513"],
-["Sagar","BILENDRA SINGH","122","2199073805"],
-["Sahil Chauhan","SURESH CHAUHAN","122","2199089182"],
-["Sakshi Singh","DEV PRAKASH SINGH","122","2199068638"],
-["Saloni Gupta","Ganesh Gupta","122","2199070901"],
-["Samta Kumari","TITU","122","2199072230"],
-["Satyam Kumar","NARESH KUMAR PASWAN","122","2199089241"],
-["Satyam Kushwaha","DASHRATH KUSHWAHA","122","2199071289"],
-["Satyam Mishra","SUDESH MISHRA","122","2199081759"],
-["Satyam Kumar Chaudhary","MANOJ KUMAR CHAUDHARY","122","2199089311"],
-["Shivam","SANJEEV KUMAR","122","2199089504"],
-["Shivam","SUNIL","122","2199073610"],
-["Shivam Kumar","MITHLESH BHANDARI","122","2199089920"],
-["Shivam Rawat","VISHNU","122","2199073665"],
-["Shivam Vishwakarma","MUNNALAL VISHWAKARMA","122","2199060217"],
-["Shreekant Paswan","SANTOSH PASWAN","122","2199089671"],
-["Sneha Rajput","LOKESH KUMAR","122","2199060167"],
-["Sumit","VINOD KUMAR","122","2199073705"],
-["Vikas","BAJRANGI","122","2199071155"],
-["Vikash Kumar","SHIV KUMAR","122","2199084769"],
-["Vimansh","AJAY","122","2199046933"],
-["Vishal","AMIT PAL","122","2199084739"],
-["Vivek Kumar","RAMNARESH","122","2199084687"],
-["Yashir Khan","BASEER KHAN","122","2199081859"],
+})
 
-/* BATCH 123 */
-["Aaditya Kumar","Sunil Pandit","123","2199068034"],
-["Amar Nath","Paras Nath","123","2199046048"],
-["Amit Kumar","Krishn Shah","123","2199057142"],
-["Anjali Kumari","Mritunjay Singh","123","2199087885"],
-["Anjum","Abdul Malik","123","2199086486"],
-["Anshika Pal","Dharmendra Pal","123","2199077697"],
-["Antima Kumari","Dharmendra Kumar Bharati","123","2199057756"],
-["Ashish","Harprasad","123","2199046341"],
-["Banti Gupta","Shambhu Gupta","123","2199046155"],
-["Banti","Jay Singh","123","2199087942"],
-["Brijesh Kumar","Kanti Prasad","123","2199078144"],
-["Diti","Gyanendra Singh","123","2199057711"],
-["Ganesh Mandal","Amar Mandal","123","2199045999"],
-["Gulshan Kumar","Maharaj Singh","123","2199068223"],
-["Gunjan","Abhimanyoo Singh Chauhan","123","2199087763"],
-["Himanshu","Gaya Prasad","123","2199087897"],
-["Jaspreet Kaur","Ikbal Singh","123","2199069181"],
-["Jiyaul","Lakmuddin","123","2199081502"],
-["Kajal","Laxman Saini","123","2199060207"],
-["Kajal Yadav","Mahadev Yadav","123","2199057641"],
-["Khushboo","Dillip","123","2199045622"],
-["Khushbu Devi","Pram Sagar","123","2199071639"],
-["Khushi","Manik Haldhar","123","2199045415"],
-["Lakshmi Rathaur","Mahipal","123","2199045350"],
-["Laxmi Kumari","Puppu Singh","123","2199071757"],
-["Mamta","Puppu Singh","123","2199071686"],
-["Manoj Thapa","Monu Thapa","123","2199072277"],
-["Mansi","Prabhash Chandra Jha","123","2199077909"],
-["Mantasa","Khalil Ahmed","123","2199077884"],
-["Mayank","Sanjeev Kumar","123","2199057342"],
-["Md Minhaz","MD Mumtaz","123","2199046101"],
-["Mohit Namdev","Santosh Kumar","123","2199084705"],
-["Nishu","Vrindvan","123","2199071912"],
-["Ranjana","Ramvilas","123","2199069309"],
-["Riya","Ajeet Kumar","123","2199046281"],
+},
+{threshold:.7}
+);
 
-/* BATCH 124 */
-["Nandani","Arvind Kumar Singh","124","2199068510"],
-["Nandani","Naval Kishar","124","2199071801"],
-["Nandani","Satish","124","2199073186"],
-["Nandani Kumari","Pushpendra Kumar","124","2199086635"],
-["Nandani Verma","Shankar Verma","124","2199086547"],
-["Neetu Kumari","Ravindra Das","124","2199087042"],
-["Nisha Kumari","Pappu Singh","124","2199071993"],
-["Nisha Kumari","Mukesh Saha","124","2199056722"],
-["Pratiksha","Vishardan Singh","124","2199046597"],
-["Preetam Bhandari","Pappu Bhandari","124","2199046965"],
-["Priya","Devender","124","2199056616"],
-["Priyanshi Gupta","Arvind Gupta","124","2199071269"],
-["Priyanshu","Jitan Seth","124","2199056322"],
-["Rishab Chakraborty","Ranjit Chakraborty","124","2199046650"],
-["Riya","Shripal Marotiya","124","2199073312"],
-["Roshani","Kamlesh","124","2199084579"],
-["Sachin Kumar","Kominder Ray","124","2199056968"],
-["Saijal Shakya","Pushpendra Kumar","124","2199086503"],
-["Sakshi","Ompal Singh","124","2199045542"],
-["Sana","Nizam","124","2199056216"],
-["Sandhya Kumari","Prabhu Rajbhar","124","2199070743"],
-["Sanjana","Mohan Lal","124","2199084885"],
-["Shabnam","Abdul Malik","124","2199086434"],
-["Shahin Khatoon","Rakeeb Ansari","124","2199083668"],
-["Shifa","Sabir Hussain","124","2199045777"],
-["Shivani","Prempal","124","2199060151"],
-["Shivani","Pramod Kumar","124","2199073466"],
-["Sidhi Kumari","Kailash Sah","124","2199060238"],
-["Simran","Ram Jatan","124","2199086365"],
-["Suhani","Kamal Kumar","124","2199084861"],
-["Sujeet Kumar","Sandeep Gupta","124","2199056902"],
-["Tripti Sharma","Deepak Sharma","124","2199073353"],
-["Utkarsh Shukla","Ravindra Prasad Shukla","124","2199073568"],
-["Varsha","Krishna Kumar","124","2199084992"],
-["Vasundhra Kumari","Chandeshwar","124","2199073301"],
+counters.forEach(c=>
+counterObserver.observe(c)
+);
 
-/* BATCH 128 */
-["Ajay Kumar","SHAMBU RAM","128","2199143669"],
-["Ajay Kumar","MITALI LAL","128","2199150407"],
-["Ajit Kumar","KRISHN SHAH","128","2199144969"],
-["Aman Kumar","RAM LAKHAN","128","2199150045"],
-["Anjali Pal","RAJ BAHADUR PAL","128","2199145112"],
-["Ankush","MAHENDRA","128","2199147647"],
-["Araman Alam","TUFANI MIYAN","128","2199153136"],
-["Arun","Ashok","128","2199068355"],
-["Avijit Kumar","RAM RATAN","128","2199060220"],
-["Bipin Kumar","SURENDRA KUMAR","128","2199083481"],
-["Bitan Das","MANARANJAN DAS","128","2199060196"],
-["Dushyant Pal","RAJENDRA SINGH","128","2199113626"],
-["Faizan","Aslam Ansari","128","2199068287"],
-["Himanshu","SATISH","128","2199060192"],
-["Jitesh Prajapati","SUBASH","128","2199083409"],
-["Kanishka Chaudhary","GOPAL CHAUDHARY","128","2199149970"],
-["Khushboo Kumari","JAWAHAR RAI","128","2199146103"],
-["Kinjal Nagar","SANJAY SANJAK NAGAR","128","2199153781"],
-["Komal Kumari","NARENDRA PAL","128","2199146319"],
-["Manjay Kumar","SHIVNATH THAKUR","128","2199057996"],
-["Md Mojahid","MOHD JAHANGIR","128","2199098027"],
-["Md. Gulfam","Md Wakil Alam","128","2199057432"],
-["Menaj","SAHNUR ALI","128","2199150758"],
-["Monu Sharma","AVDHES KUMAR","128","2199045697"],
-["Nimit Kumar Singh","VEERESH SINGH","128","2199056770"],
-["Ranjeet Kumar","SHAKHAR YADAV","128","2199093307"],
-["Rupesh Kumar","PRABHU DAYAL SHARMA","128","2199096203"],
-["Sachin","MULAYAM SINGH","128","2199147288"],
-["Shahrukh","ALIHASAN","128","2199098290"],
-["Shiwani","KALKA","128","2199090423"],
-["Sunny","Raju","128","2199090279"],
-["Sunny","Sanjay Gupta","128","2199090331"],
-["Sunny Singh","PINTU SINGH","128","2199090355"],
-["Tanu","MUKESH","128","2199090474"],
-["Vishal kumar","BHAGELUSHA","128","2199097757"],
+/*
+STUDENT DATA
 
-/* BATCH 136 */
-["Abhay Singh","Satish Kuamr","136","2199168300"],
-["Abhishek Tiwari","DEV BHUSHAN TIWARI","136","2199168435"],
-["Abhishek Verma","SHYAM PARKASH","136","2199167997"],
-["Akriti","HARILAL YADAV","136","2199166597"],
-["Amit","Harishankar","136","2199167458"],
-["Anjali","Munnalal","136","2199168273"],
-["Ankit Singh","LALU SINGH","136","2199166598"],
-["Arjun","Mahaveer","136","2199167974"],
-["Arun","UDAY BHAN","136","2199166578"],
-["Arun Singh","Dhan Singh","136","2199168136"],
-["Brijesh Shahni","Ramnath Sahani","136","2199168268"],
-["Chahat Kumari","Sunil Kumar Singh","136","2199167516"],
-["Daksh Sharma","Rakesh Sharma","136","2199167430"],
-["Deepak Sah","RAM NAT SHA","136","2199168004"],
-["Dipanshu","Sonpal","136","2199168217"],
-["Fezaan","FAJAL","136","2199163868"],
-["Harsh Sodhey","Satish Kuamr","136","2199168287"],
-["Ilma","Arshad Khan","136","2199167436"],
-["Karishma","Vinod Kumar","136","2199168012"],
-["Khushboo Raikwar","Moni Raikwar","136","2199168322"],
-["Khushi Dubey","Brijeru Dube","136","2199167498"],
-["Kishan Kumar","KAILASH KUMAR","136","2199168008"],
-["Kuldeep","Pramod","136","2199167526"],
-["Md Ibran","MOHD AKBAR","136","2199167991"],
-["Meenu","RAGHU RAJ","136","2199167982"],
-["Mohd Saif","MD CHAND","136","2199168408"],
-["Mohit Chauhan","Umern Chauhan","136","2199167395"],
-["Neha","Nadeem","136","2199167379"],
-["Rahul Kumar","Chhote Lal","136","2199168160"],
-["Roshan","Maya Ram","136","2199168255"],
-["Sachin Bharti","Birbal","136","2199166634"],
-["Sahdev Gupta","Prem Sagar","136","2199168333"],
-["Shivam Kumar","Shiv Charan","136","2199168171"],
-["Sumit","S/O: Maiyadeen","136","2199168126"],
-["Tandrarani Chaki","Rajib Chaki","136","2199168017"],
+Keep the actual student records in students.json
+in the same GitHub repository.
 
-/* BATCH 137 */
-["Abhinandan Kumar","SHANKAR GUPTA","137","2199175483"],
-["Abhishek Pandey","SHESHNATH","137","2199171438"],
-["Aditya Thakur","RAKESH THAKUR","137","2199171414"],
-["Aman Yadav","HARENDRA YADAV","137","2199171086"],
-["Anshu","SHIV KUMAR","137","2199171569"],
-["Anurag Kumar Mahtha","MANOJ MAHTHA","137","2199171907"],
-["Ayush","ANIL KUMAR","137","2199171224"],
-["Deepti Kumari","MANOJ TIWARI","137","2199172679"],
-["Gungun Sodhey","SATISH KUMAR","137","2199175321"],
-["Harsh Singh","DEV PRAKASH SINGH","137","2199171858"],
-["Himalaya","SUNDER","137","2199171109"],
-["Himanshu","CHANDRA PRAKASH","137","2199172689"],
-["Kajal","SURENDRA","137","2199172963"],
-["Kajal","MUNESH","137","2199171923"],
-["Md Waish","SHAID","137","2199169701"],
-["Monika Kumari Shaha","MONTO SHAH","137","2199171462"],
-["Naman","DINESH","137","2199175502"],
-["Nikhil","SHIV CHARAN","137","2199175756"],
-["Prince Kumar","DEEPAK","137","2199171351"],
-["Rano","YAAD RAM","137","2199171183"],
-["Roshan Kumar","BIPIN","137","2199171893"],
-["Sagar","RAJ KUMAR","137","2199168801"],
-["Saniya Khatoon","SAKIR HUSSAIN","137","2199171487"],
-["Shalini","NEMCHANDRA","137","2199173363"],
-["Shiva Kashyap","KALLU KASHYAP","137","2199173346"],
-["Srishti","AMIT","137","2199172529"]
+Format:
 
-];
+[
+{
+"name":"banti",
+"father":"shambhu gupta",
+"nameDisplay":"Banti",
+"fatherDisplay":"SHAMBHU GUPTA",
+"className":"11th",
+"batch":"123",
+"id":"2199046155",
+"timing":"12:10 – 02:10",
+"status":"ACTIVE",
+"role":"CLASS REPRESENTATIVE"
+}
+]
 
-/* STUDENT COUNT CHECK */
-console.log("Student records loaded:",students.length);
+The complete 201-record database should remain
+outside this public HTML file.
+*/
+
+let students=[];
+
+fetch("students.json")
+.then(response=>{
+
+if(!response.ok)
+throw new Error("students.json not found");
+
+return response.json();
+
+})
+.then(data=>{
+
+students=data;
+
+console.log(
+"Student records loaded:",
+students.length
+);
+
+})
+.catch(error=>{
+
+console.warn(
+"Student database not loaded:",
+error
+);
+
+});
+
+/* TRAINER SIGNATURES */
+
+const trainerMap={
+
+"122":{
+name:"Archit Varshney",
+sign:"signature_archit.png"
+},
+
+"128":{
+name:"Archit Varshney",
+sign:"signature_archit.png"
+},
+
+"123":{
+name:"Shivansh Kumar Tripathi",
+sign:"signature_shivansh.png"
+},
+
+"136":{
+name:"Shivansh Kumar Tripathi",
+sign:"signature_shivansh.png"
+},
+
+"124":{
+name:"Jiya Aggarwal",
+sign:"signature_jiya.png"
+},
+
+"137":{
+name:"Jiya Aggarwal",
+sign:"signature_jiya.png"
+}
+
+};
 
 /* NORMALIZE */
-function normalize(v){
- return v.trim().toLowerCase().replace(/\s+/g," ");
-}
 
-/* BATCH PANEL */
-function showBatches(){
+function normalize(value){
 
- const panel=document.getElementById("batchPanel");
-
- panel.classList.add("show");
-
- panel.scrollIntoView({
-  behavior:"smooth",
-  block:"center"
- });
-
-}
-
-/* SHOW BATCH */
-function showBatch(batch){
-
- const list=students.filter(s=>s[2]===batch);
-
- const body=document.getElementById("studentTableBody");
-
- body.innerHTML="";
-
- list.forEach((s,index)=>{
-
-  const tr=document.createElement("tr");
-
-  tr.innerHTML=`
-   <td>${index+1}</td>
-   <td>${escapeHTML(s[0])}</td>
-   <td>${escapeHTML(s[1])}</td>
-   <td>${s[2]}</td>
-   <td>${s[3]}</td>
-  `;
-
-  body.appendChild(tr);
-
- });
-
- document.getElementById("listTitle").textContent=
-  "PROJECT PRAVEEN • BATCH "+batch;
-
- document.getElementById("listCount").textContent=
-  list.length+" Students";
-
- document.getElementById("studentList").classList.add("show");
-
- document.getElementById("studentList").scrollIntoView({
-  behavior:"smooth",
-  block:"center"
- });
-
-}
-
-/* HIDE LIST */
-function hideStudentList(){
- document.getElementById("studentList").classList.remove("show");
-}
-
-/* ESCAPE HTML */
-function escapeHTML(value){
-
- const div=document.createElement("div");
- div.textContent=value;
- return div.innerHTML;
+return String(value)
+.trim()
+.toLowerCase()
+.replace(/\s+/g," ");
 
 }
 
 /* ID ROW */
+
 function row(icon,label,value){
 
- return `
- <div class="id-row">
-  <div class="id-icon">${icon}</div>
-  <div class="id-label">${label}</div>
-  <div class="id-colon">:</div>
-  <div class="id-value">${escapeHTML(value)}</div>
- </div>
- `;
+return `
+<div class="id-row">
+
+<div class="id-icon">
+${icon}
+</div>
+
+<div class="id-label">
+${label}
+</div>
+
+<div class="id-colon">
+:
+</div>
+
+<div class="id-value">
+${value}
+</div>
+
+</div>
+`;
 
 }
 
 /* RENDER ID */
-function renderStudent(s){
 
- document.getElementById("idRole").textContent=
-  s[0].toLowerCase()==="banti gupta" ||
-  (s[0].toLowerCase()==="banti" && s[1].toLowerCase()==="shambhu gupta")
-  ? "CLASS REPRESENTATIVE"
-  : "STUDENT";
+function renderStudent(student){
 
- document.getElementById("details").innerHTML=
+document.getElementById("idRole").textContent=
+student.role || "STUDENT";
 
-  row("👤","Name",s[0])+
+document.getElementById("details").innerHTML=
 
-  row("👤","Father’s Name",s[1])+
+row(
+"👤",
+"Name",
+student.nameDisplay
+)
 
-  row("👥","Class","11th")+
++
 
-  row("👥","Batch",s[2])+
+row(
+"👤",
+"Father’s Name",
+student.fatherDisplay
+)
 
-  row("🪪","ID Number",s[3])+
++
 
-  row("🕒","Timing",
-   (s[2]==="122"||s[2]==="123"||s[2]==="124")
-   ? "12:10 – 02:10"
-   : "09:00 – 11:00"
-  )+
+row(
+"👥",
+"Class",
+student.className
+)
 
-  row("✓","Status","ACTIVE").replace(
-   "ACTIVE",
-   '<span class="active">● ACTIVE</span>'
-  );
++
+
+row(
+"👥",
+"Batch",
+student.batch
+)
+
++
+
+row(
+"🪪",
+"ID No.",
+student.id
+)
+
++
+
+row(
+"🕒",
+"Timing",
+student.timing
+)
+
++
+
+row(
+"✓",
+"Status",
+`<span class="active">
+● ${student.status || "ACTIVE"}
+</span>`
+);
+
+const trainer=
+trainerMap[String(student.batch)];
+
+if(trainer){
+
+const sign=
+document.getElementById(
+"trainerSignature"
+);
+
+sign.src=trainer.sign;
+
+sign.alt=
+trainer.name+" signature";
 
 }
 
-/* FIND DIGITAL ID */
+}
+
+/* FIND ID */
+
 function findID(){
 
- const name=normalize(
-  document.getElementById("studentName").value
- );
+const name=
+normalize(
+document.getElementById(
+"studentName"
+).value
+);
 
- const father=normalize(
-  document.getElementById("fatherName").value
- );
+const father=
+normalize(
+document.getElementById(
+"fatherName"
+).value
+);
 
- const card=document.getElementById("idCard");
+const card=
+document.getElementById(
+"idCard"
+);
 
- if(!name||!father){
+if(!name || !father){
 
-  card.style.display="none";
+card.style.display="none";
 
-  alert(
-   "Please enter both Student Name and Father’s Name."
-  );
+alert(
+"Please enter both Student Name and Father's Name."
+);
 
-  return;
- }
-
- const student=students.find(s=>
-  normalize(s[0])===name &&
-  normalize(s[1])===father
- );
-
- if(student){
-
-  renderStudent(student);
-
-  card.style.display="block";
-
-  card.scrollIntoView({
-   behavior:"smooth",
-   block:"center"
-  });
-
- }else{
-
-  card.style.display="none";
-
-  alert(
-   "❌ Record Not Found\n\n"+
-   "Please check your Student Name and Father’s Name."
-  );
-
- }
+return;
 
 }
 
-/* ENTER SEARCH */
-document.addEventListener("keydown",e=>{
+if(!students.length){
 
- if(
-  e.key==="Enter" &&
-  document.activeElement.tagName==="INPUT"
- ){
-  findID();
- }
+alert(
+"Student database is not loaded yet.\n\nPlease make sure students.json is uploaded in the repository."
+);
 
+return;
+
+}
+
+const student=
+students.find(
+s=>
+normalize(s.name)===name &&
+normalize(s.father)===father
+);
+
+if(student){
+
+renderStudent(student);
+
+card.style.display="block";
+
+card.scrollIntoView({
+behavior:"smooth",
+block:"center"
 });
 
-/* TOP BUTTON */
-window.addEventListener("scroll",()=>{
+}else{
 
- document.getElementById("top")
- .classList.toggle("show",window.scrollY>500);
+card.style.display="none";
 
+alert(
+"❌ Record Not Found\n\nPlease check your Name and Father's Name."
+);
+
+}
+
+}
+
+/* BATCH PANEL */
+
+function toggleBatches(){
+
+const panel=
+document.getElementById(
+"batchPanel"
+);
+
+panel.classList.toggle("show");
+
+if(panel.classList.contains("show")){
+
+panel.scrollIntoView({
+behavior:"smooth",
+block:"start"
 });
 
-/* GALLERY */
-function openPhoto(el){
+}
 
- document.getElementById("lightboxImg").src=
-  el.querySelector("img").src;
+}
 
- document.getElementById("lightbox")
- .classList.add("show");
+/* SHOW BATCH */
+
+function showBatch(batch,button){
+
+document
+.querySelectorAll(".batch-btn")
+.forEach(btn=>
+btn.classList.remove("active")
+);
+
+button.classList.add("active");
+
+const list=
+document.getElementById(
+"studentList"
+);
+
+const body=
+document.getElementById(
+"studentTableBody"
+);
+
+const rows=
+students.filter(
+student=>
+Number(student.batch)===Number(batch)
+);
+
+document.getElementById(
+"batchTitle"
+).textContent=
+"Batch "+batch;
+
+document.getElementById(
+"batchCount"
+).textContent=
+rows.length+" Students";
+
+if(!rows.length){
+
+body.innerHTML=`
+<tr>
+<td colspan="4">
+No records available.
+</td>
+</tr>
+`;
+
+}else{
+
+body.innerHTML=
+rows.map(student=>`
+
+<tr>
+
+<td>
+${student.nameDisplay}
+</td>
+
+<td>
+${student.fatherDisplay}
+</td>
+
+<td>
+${student.batch}
+</td>
+
+<td>
+${student.id}
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+list.classList.add("show");
+
+list.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}
+
+/* LIGHTBOX */
+
+function openPhoto(element){
+
+const image=
+element.querySelector("img");
+
+document.getElementById(
+"lightboxImg"
+).src=image.src;
+
+document.getElementById(
+"lightbox"
+).classList.add("show");
 
 }
 
 function closePhoto(){
 
- document.getElementById("lightbox")
- .classList.remove("show");
+document.getElementById(
+"lightbox"
+).classList.remove("show");
 
 }
 
-document.addEventListener("keydown",e=>{
+/* KEYBOARD */
 
- if(e.key==="Escape"){
-  closePhoto();
- }
+document.addEventListener(
+"keydown",
+event=>{
 
-});
+if(
+event.key==="Enter" &&
+document.activeElement.tagName==="INPUT"
+){
+
+findID();
+
+}
+
+if(event.key==="Escape"){
+closePhoto();
+}
+
+}
+);
+
+/* TOP BUTTON */
+
+window.addEventListener(
+"scroll",
+()=>{
+
+document.getElementById(
+"top"
+).classList.toggle(
+"show",
+window.scrollY>500
+);
+
+}
+);
 
 </script>
 
 </body>
-  </html>
+ </html>
